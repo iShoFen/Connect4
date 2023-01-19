@@ -7,11 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EC55DEE129768EF300680E1A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC55DEE029768EF300680E1A /* main.swift */; };
+		EC7388E72979739D00386323 /* Power4Lib in Frameworks */ = {isa = PBXBuildFile; productRef = EC7388E62979739D00386323 /* Power4Lib */; };
+		EC975AB52976882A0072120A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC975AB42976882A0072120A /* main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		EC55DEDB29768EF300680E1A /* CopyFiles */ = {
+		EC975AAF2976882A0072120A /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -23,81 +24,93 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		EC55DEDD29768EF300680E1A /* PowerApp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PowerApp; sourceTree = BUILT_PRODUCTS_DIR; };
-		EC55DEE029768EF300680E1A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		EC975AB12976882A0072120A /* Power4App */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Power4App; sourceTree = BUILT_PRODUCTS_DIR; };
+		EC975AB42976882A0072120A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		EC55DEDA29768EF300680E1A /* Frameworks */ = {
+		EC975AAE2976882A0072120A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EC7388E72979739D00386323 /* Power4Lib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		EC55DED429768EF300680E1A = {
+		EC7388E52979739D00386323 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				EC55DEDF29768EF300680E1A /* PowerApp */,
-				EC55DEDE29768EF300680E1A /* Products */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EC975AA82976882A0072120A = {
+			isa = PBXGroup;
+			children = (
+				EC975AB32976882A0072120A /* Power4App */,
+				EC975AB22976882A0072120A /* Products */,
+				EC7388E52979739D00386323 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		EC55DEDE29768EF300680E1A /* Products */ = {
+		EC975AB22976882A0072120A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EC55DEDD29768EF300680E1A /* PowerApp */,
+				EC975AB12976882A0072120A /* Power4App */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EC55DEDF29768EF300680E1A /* PowerApp */ = {
+		EC975AB32976882A0072120A /* Power4App */ = {
 			isa = PBXGroup;
 			children = (
-				EC55DEE029768EF300680E1A /* main.swift */,
+				EC975AB42976882A0072120A /* main.swift */,
 			);
-			path = PowerApp;
+			path = Power4App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EC55DEDC29768EF300680E1A /* PowerApp */ = {
+		EC975AB02976882A0072120A /* Power4App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EC55DEE429768EF300680E1A /* Build configuration list for PBXNativeTarget "PowerApp" */;
+			buildConfigurationList = EC975AB82976882A0072120A /* Build configuration list for PBXNativeTarget "Power4App" */;
 			buildPhases = (
-				EC55DED929768EF300680E1A /* Sources */,
-				EC55DEDA29768EF300680E1A /* Frameworks */,
-				EC55DEDB29768EF300680E1A /* CopyFiles */,
+				EC975AAD2976882A0072120A /* Sources */,
+				EC975AAE2976882A0072120A /* Frameworks */,
+				EC975AAF2976882A0072120A /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = PowerApp;
-			productName = PowerApp;
-			productReference = EC55DEDD29768EF300680E1A /* PowerApp */;
+			name = Power4App;
+			packageProductDependencies = (
+				EC7388E62979739D00386323 /* Power4Lib */,
+			);
+			productName = Power4App;
+			productReference = EC975AB12976882A0072120A /* Power4App */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		EC55DED529768EF300680E1A /* Project object */ = {
+		EC975AA92976882A0072120A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1410;
 				LastUpgradeCheck = 1410;
 				TargetAttributes = {
-					EC55DEDC29768EF300680E1A = {
+					EC975AB02976882A0072120A = {
 						CreatedOnToolsVersion = 14.1;
 					};
 				};
 			};
-			buildConfigurationList = EC55DED829768EF300680E1A /* Build configuration list for PBXProject "PowerApp" */;
+			buildConfigurationList = EC975AAC2976882A0072120A /* Build configuration list for PBXProject "Power4App" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -105,29 +118,29 @@
 				en,
 				Base,
 			);
-			mainGroup = EC55DED429768EF300680E1A;
-			productRefGroup = EC55DEDE29768EF300680E1A /* Products */;
+			mainGroup = EC975AA82976882A0072120A;
+			productRefGroup = EC975AB22976882A0072120A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC55DEDC29768EF300680E1A /* PowerApp */,
+				EC975AB02976882A0072120A /* Power4App */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		EC55DED929768EF300680E1A /* Sources */ = {
+		EC975AAD2976882A0072120A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC55DEE129768EF300680E1A /* main.swift in Sources */,
+				EC975AB52976882A0072120A /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		EC55DEE229768EF300680E1A /* Debug */ = {
+		EC975AB62976882A0072120A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -187,7 +200,7 @@
 			};
 			name = Debug;
 		};
-		EC55DEE329768EF300680E1A /* Release */ = {
+		EC975AB72976882A0072120A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -240,23 +253,19 @@
 			};
 			name = Release;
 		};
-		EC55DEE529768EF300680E1A /* Debug */ = {
+		EC975AB92976882A0072120A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9G38B6NUU;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		EC55DEE629768EF300680E1A /* Release */ = {
+		EC975ABA2976882A0072120A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J9G38B6NUU;
-				ENABLE_HARDENED_RUNTIME = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -265,25 +274,32 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EC55DED829768EF300680E1A /* Build configuration list for PBXProject "PowerApp" */ = {
+		EC975AAC2976882A0072120A /* Build configuration list for PBXProject "Power4App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC55DEE229768EF300680E1A /* Debug */,
-				EC55DEE329768EF300680E1A /* Release */,
+				EC975AB62976882A0072120A /* Debug */,
+				EC975AB72976882A0072120A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EC55DEE429768EF300680E1A /* Build configuration list for PBXNativeTarget "PowerApp" */ = {
+		EC975AB82976882A0072120A /* Build configuration list for PBXNativeTarget "Power4App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				EC55DEE529768EF300680E1A /* Debug */,
-				EC55DEE629768EF300680E1A /* Release */,
+				EC975AB92976882A0072120A /* Debug */,
+				EC975ABA2976882A0072120A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EC7388E62979739D00386323 /* Power4Lib */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Power4Lib;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = EC55DED529768EF300680E1A /* Project object */;
+	rootObject = EC975AA92976882A0072120A /* Project object */;
 }

@@ -2,9 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:PowerApp/PowerApp.xcodeproj">
+      location = "group:Power4App/../Power4Lib">
    </FileRef>
    <FileRef
-      location = "group:Power4Lib">
+      location = "group:Power4App/Power4App.xcodeproj">
    </FileRef>
 </Workspace>

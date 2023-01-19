@@ -22,7 +22,7 @@ let package = Package(
             name: "Power4Lib",
             dependencies: []),
         .testTarget(
-            name: "Power4LibTests",
+            name: "LibTests",
             dependencies: ["Power4Lib"]),
     ]
 )

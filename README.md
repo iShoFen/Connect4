@@ -1,3 +1,3 @@
-# Power4
+# Connect4
 
-A little command line Power 4
+A little command line Connect 4

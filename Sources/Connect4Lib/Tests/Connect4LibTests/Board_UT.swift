@@ -72,13 +72,12 @@ final class Board_UT: XCTestCase {
                 return
             }
 
-            XCTAssertEqual(.added(id: id, row: row, column: column), result)
+            XCTAssertEqual(.added(id: id, row: row + 1, column: column + 1), result)
         }
 
-        expect(insertPieceBy: 1, atRow: 1, andAtColumn: 1, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: nil)
-        expect(insertPieceBy: 1, atRow: 1, andAtColumn: -1, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: .outOfBounds)
-        expect(insertPieceBy: 1, atRow: 1, andAtColumn: 0, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: .outOfBounds)
-        expect(insertPieceBy: 1, atRow: 1, andAtColumn: 3, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: .columnFull)
+        expect(insertPieceBy: 1, atRow: 0, andAtColumn: 0, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: nil)
+        expect(insertPieceBy: 1, atRow: 0, andAtColumn: -1, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: .outOfBounds)
+        expect(insertPieceBy: 1, atRow: 0, andAtColumn: 2, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: .columnFull)
     }
 
     func testDelete() throws {
@@ -91,13 +90,12 @@ final class Board_UT: XCTestCase {
                 return
             }
 
-            XCTAssertEqual(.deleted(id: id, row: row, column: column), result)
+            XCTAssertEqual(.deleted(id: id, row: row + 1, column: column + 1), result)
         }
 
-        expect(deletePieceBy: 1, atRow: 1, andAtColumn: 1, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: nil)
-        expect(deletePieceBy: 1, atRow: 1, andAtColumn: -1, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: .outOfBounds)
-        expect(deletePieceBy: 1, atRow: 1, andAtColumn: 0, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: .outOfBounds)
-        expect(deletePieceBy: 1, atRow: 1, andAtColumn: 3, inBoard: Board(withGrid: [[nil,nil,nil]])!, shouldFail: .columnEmpty)
+        expect(deletePieceBy: 1, atRow: 0, andAtColumn: 0, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: nil)
+        expect(deletePieceBy: 1, atRow: 0, andAtColumn: -1, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: .outOfBounds)
+        expect(deletePieceBy: 1, atRow: 0, andAtColumn: 2, inBoard: Board(withGrid: [[nil,nil,nil]])!, shouldFail: .columnEmpty)
     }
 
     func testIsFull() throws {

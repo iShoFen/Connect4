@@ -66,11 +66,11 @@ public struct Board : CustomStringConvertible {
     }
     
     public mutating func insertPiece(by id: Int, atColumn column: Int) -> BoardResult {
-        guard column > 0 && column <= nbColumns else { return .failed(reason: .outOfBounds) }
+        guard column >= 0 && column < nbColumns else { return .failed(reason: .outOfBounds) }
         
         for row in 0..<nbRows {
-            if insertPiece(by: id, atRow: row, andAtColumn: column - 1) {
-                return .added(id: id, row: row + 1, column: column)
+            if insertPiece(by: id, atRow: row, andAtColumn: column) {
+                return .added(id: id, row: row + 1, column: column + 1)
             }
         }
         
@@ -89,14 +89,14 @@ public struct Board : CustomStringConvertible {
     }
     
     public mutating func removePiece(atColumn column: Int) -> BoardResult {
-        guard column > 0 && column <= nbColumns else {
+        guard column >= 0 && column < nbColumns else {
             return .failed(reason: .outOfBounds)
         }
         
         for row in (0..<nbRows).reversed() {
-            let (id, isDeleted) = removePiece(atRow: row, andAtColumn: column - 1)
+            let (id, isDeleted) = removePiece(atRow: row, andAtColumn: column)
             if isDeleted {
-                return .deleted(id: id!, row: row + 1, column: column)
+                return .deleted(id: id!, row: row + 1, column: column + 1)
             }
         }
         

@@ -57,14 +57,15 @@ func removePiece(atColumn column: Int, in b: inout Board) {
 if var board = Board(withGrid: Array(repeating: Array(repeating: nil, count: 3), count: 3)) {
     print(board)
     insertPiece(by: 2, atColumn: 10, in: &board)
-    insertPiece(by: 2, atColumn: 1, in: &board)
-    insertPiece(by: 1, atColumn: 1, in: &board)
-    insertPiece(by: 1, atColumn: 1, in: &board)
+    insertPiece(by: 2, atColumn: 0, in: &board)
+    insertPiece(by: 1, atColumn: 0, in: &board)
+    insertPiece(by: 1, atColumn: 0, in: &board)
+    insertPiece(by: 1, atColumn: 0, in: &board)
     insertPiece(by: 1, atColumn: 2, in: &board)
-    insertPiece(by: 1, atColumn: 3, in: &board)
-    removePiece(atColumn: 1, in: &board)
+    removePiece(atColumn: 0, in: &board)
     print(board)
     print(board.isFull())
+
 }
 
 print("Another board\n")

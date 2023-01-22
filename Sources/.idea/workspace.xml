@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12a95a35-a8cb-481f-b36d-a626088c058a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/AI.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,6 +45,11 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.Connect4App">
     <configuration name="Connect4Lib" type="SwiftPackageManagerRunConfiguration" factoryName="Swift Package Run" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4Lib" CONFIG_NAME="Connect4Lib">
       <method v="2">
@@ -88,7 +91,7 @@
       <workItem from="1674331633542" duration="194000" />
       <workItem from="1674331830405" duration="78000" />
       <workItem from="1674331943993" duration="410000" />
-      <workItem from="1674333798635" duration="9580000" />
+      <workItem from="1674333798635" duration="11427000" />
     </task>
     <servers />
   </component>

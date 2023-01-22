@@ -54,7 +54,7 @@ public struct Board : CustomStringConvertible {
         nbColumns = grid[0].count
         _grid = grid
     }
-    
+
     private mutating func insertPiece(by id: Int, atRow row: Int, andAtColumn column: Int) -> Bool {
         guard _grid[row][column] == nil else {
             return false
@@ -99,7 +99,7 @@ public struct Board : CustomStringConvertible {
                 return .deleted(id: id!, row: row + 1, column: column + 1)
             }
         }
-        
+
         return .failed(reason: .columnEmpty)
     }
     
@@ -108,6 +108,18 @@ public struct Board : CustomStringConvertible {
             $0.allSatisfy {
                 $0 != nil
             }
+        }
+    }
+
+    public func isColumnFull(at column: Int) -> Bool {
+        _grid.allSatisfy {
+            $0[column] != nil
+        }
+    }
+
+    public func isRowFull(at row: Int) -> Bool {
+        _grid[row].allSatisfy {
+            $0 != nil
         }
     }
 }

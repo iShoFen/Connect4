@@ -65,7 +65,6 @@ if var board = Board(withGrid: Array(repeating: Array(repeating: nil, count: 3),
     removePiece(atColumn: 0, in: &board)
     print(board)
     print(board.isFull())
-
 }
 
 print("Another board\n")

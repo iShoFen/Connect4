@@ -106,4 +106,24 @@ final class Board_UT: XCTestCase {
         expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, isFull: true)
         expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,2,nil]])!, isFull: false)
     }
+
+    func testIsColumnFull() throws {
+        func expect(board: Board, column: Int, isFull valid: Bool) {
+            XCTAssertEqual(valid, board.isColumnFull(at: column))
+        }
+
+        expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, column: 0, isFull: true)
+        expect(board: Board(withGrid: [[1,2,1], [nil,2,nil], [1,2,1]])!, column: 1, isFull: true)
+        expect(board: Board(withGrid: [[1,2,1], [1,2,nil], [1,2,1]])!, column: 2, isFull: false)
+    }
+
+    func testIsRowFull() throws {
+        func expect(board: Board, row: Int, isFull valid: Bool) {
+            XCTAssertEqual(valid, board.isRowFull(at: row))
+        }
+
+        expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, row: 0, isFull: true)
+        expect(board: Board(withGrid: [[1,2,1], [nil,nil,nil], [1,2,1]])!, row: 2, isFull: true)
+        expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,nil,1]])!, row: 2, isFull: false)
+    }
 }

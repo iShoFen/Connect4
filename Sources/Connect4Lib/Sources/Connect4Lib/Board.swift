@@ -13,7 +13,7 @@ public struct Board : CustomStringConvertible {
     
     public var description: String {
         var string = String()
-        for row in _grid.reversed() {
+        for row in grid.reversed() {
             for cell in row {
                 string.append("\(Board.descriptionMapper[cell] ?? "-") ")
             }
@@ -27,9 +27,7 @@ public struct Board : CustomStringConvertible {
 
     public let nbColumns: Int
     
-    var _grid: [[Int?]]
-
-    public var grid: [[Int?]] { _grid }
+    public private(set) var grid: [[Int?]]
     
     public init?(withNbRows nbRows: Int = 6, andNbColumns nbColumns: Int = 7) {
         guard nbRows > 0 && nbColumns > 0 else {
@@ -38,7 +36,7 @@ public struct Board : CustomStringConvertible {
         
         self.nbRows = nbRows
         self.nbColumns = nbColumns
-        _grid = Array(repeating: Array(repeating: nil, count: nbColumns), count: nbRows)
+        grid = Array(repeating: Array(repeating: nil, count: nbColumns), count: nbRows)
     }
     
     public init?(withGrid grid: [[Int?]]) {
@@ -52,15 +50,15 @@ public struct Board : CustomStringConvertible {
         
         nbRows = grid.count
         nbColumns = grid[0].count
-        _grid = grid
+        self.grid = grid
     }
 
     private mutating func insertPiece(by id: Int, atRow row: Int, andAtColumn column: Int) -> Bool {
-        guard _grid[row][column] == nil else {
+        guard grid[row][column] == nil else {
             return false
         }
         
-        _grid[row][column] = id
+        grid[row][column] = id
         
         return true
     }
@@ -78,12 +76,12 @@ public struct Board : CustomStringConvertible {
     }
     
     private mutating func removePiece(atRow row: Int, andAtColumn column: Int) -> (id : Int?, isDeleted: Bool) {
-        guard _grid[row][column] != nil else {
+        guard grid[row][column] != nil else {
             return (nil, false)
         }
 
-        let id = _grid[row][column]
-        _grid[row][column] = nil
+        let id = grid[row][column]
+        grid[row][column] = nil
 
         return (id, true)
     }
@@ -104,7 +102,7 @@ public struct Board : CustomStringConvertible {
     }
     
     public func isFull() -> Bool {
-        _grid.allSatisfy {
+        grid.allSatisfy {
             $0.allSatisfy {
                 $0 != nil
             }
@@ -112,13 +110,13 @@ public struct Board : CustomStringConvertible {
     }
 
     public func isColumnFull(at column: Int) -> Bool {
-        _grid.allSatisfy {
+        grid.allSatisfy {
             $0[column] != nil
         }
     }
 
     public func isRowFull(at row: Int) -> Bool {
-        _grid[row].allSatisfy {
+        grid[row].allSatisfy {
             $0 != nil
         }
     }

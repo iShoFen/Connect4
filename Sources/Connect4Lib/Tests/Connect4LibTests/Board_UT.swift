@@ -9,9 +9,8 @@ import XCTest
 @testable import Connect4Lib
 
 final class Board_UT: XCTestCase {
-
+    
     func testInit() throws {
-        
         func expect(initBoardWithNbRows nbRows: Int, andNbColumns nbColumns: Int, shouldBeNotNil notNil: Bool) {
             let board = Board(withNbRows: nbRows, andNbColumns: nbColumns)
             

@@ -1,5 +1,5 @@
 //
-// Created by etudiant on 25/01/2023.
+// Created by Samuel on 25/01/2023.
 //
 
 import Foundation
@@ -33,5 +33,15 @@ public protocol IRule {
     ///
     /// - Note: A board is valid if it has the correct number of rows and columns.
     func isValid(board: Board) -> RuleResult
-    func isGameOver(board: Board) -> RuleResult
+
+    /// Check if the game is over.
+    ///
+    /// - Parameters:
+    ///   - board: The board to check.
+    ///   - lastMove: The last move made on the board.
+    ///
+    /// - Returns: A `RuleResult` indicating if the game is over.
+    ///
+    /// - Note: A game is over if there is a winner or if the board is full.
+    func isGameOver(onBoard board: Board, withLastMove lastMove: (row: Int, column: Int)) -> RuleResult
 }

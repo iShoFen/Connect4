@@ -7,8 +7,7 @@
 
 import Foundation
 
-public struct Board : CustomStringConvertible {
-    
+public struct Board : CustomStringConvertible, Equatable {
     private static let descriptionMapper: [Int?:String] = [nil:"-", 1:"X", 2:"O"]
     
     public var description: String {
@@ -28,6 +27,16 @@ public struct Board : CustomStringConvertible {
     public let nbColumns: Int
     
     public private(set) var grid: [[Int?]]
+
+    public static func == (lhs: Board, rhs: Board) -> Bool {
+        lhs.nbRows == rhs.nbRows
+                && lhs.nbColumns == rhs.nbColumns
+                && lhs.grid.enumerated().allSatisfy { (rowIndex, row) in
+                    row.enumerated().allSatisfy { (columnIndex, cell) in
+                        cell == rhs.grid[rowIndex][columnIndex]
+                    }
+                }
+    }
     
     public init?(withNbRows nbRows: Int = 6, andNbColumns nbColumns: Int = 7) {
         guard nbRows > 0 && nbColumns > 0 else {

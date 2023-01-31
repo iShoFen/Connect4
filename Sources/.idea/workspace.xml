@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12a95a35-a8cb-481f-b36d-a626088c058a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Connect4App.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/AI.swift" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,10 +73,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player" />
       <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player" />
     </key>
   </component>
-  <component name="RunManager" selected="Swift Package Test.StandardRule_UT">
+  <component name="RunManager" selected="Swift Package Test.Board_UT.testEqual">
     <configuration name="Connect4App" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4App" TARGET_NAME="Connect4App" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="Connect4App" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Connect4App" RUN_TARGET_NAME="Connect4App" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -100,7 +98,19 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Board_UT.testEqual" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Board_UT" TEST_METHOD="testEqual" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Connect4LibTests" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Player_UT.testInit" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Player_UT" TEST_METHOD="testInit" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -116,11 +126,15 @@
       <item itemvalue="Application.Connect4App" />
       <item itemvalue="Swift Package Run.Connect4Lib" />
       <item itemvalue="Swift Package Test.Connect4LibTests" />
+      <item itemvalue="Swift Package Test.Board_UT.testEqual" />
+      <item itemvalue="Swift Package Test.Player_UT.testInit" />
       <item itemvalue="Swift Package Test.StandardRule_UT" />
       <item itemvalue="Swift Package Test.Board_UT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Swift Package Test.Board_UT.testEqual" />
+        <item itemvalue="Swift Package Test.Player_UT.testInit" />
         <item itemvalue="Swift Package Test.StandardRule_UT" />
         <item itemvalue="Swift Package Test.Board_UT" />
       </list>
@@ -141,7 +155,8 @@
       <workItem from="1674639430828" duration="2753000" />
       <workItem from="1674657738165" duration="4057000" />
       <workItem from="1675004866547" duration="608000" />
-      <workItem from="1675042639828" duration="2356000" />
+      <workItem from="1675042639828" duration="2669000" />
+      <workItem from="1675176579658" duration="5695000" />
     </task>
     <servers />
   </component>
@@ -163,5 +178,26 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+  </component>
+  <component name="com.jetbrains.swift.settings.SwiftDoccSettings">
+    <option name="targetSettings">
+      <map>
+        <entry key="Connect4Lib/Connect4Lib">
+          <value>
+            <SwiftDoccTargetSettingsData />
+          </value>
+        </entry>
+        <entry key="Connect4Lib/Connect4LibTests">
+          <value>
+            <SwiftDoccTargetSettingsData />
+          </value>
+        </entry>
+        <entry key="EC975AB02976882A0072120A">
+          <value>
+            <SwiftDoccTargetSettingsData />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

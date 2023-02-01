@@ -5,19 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/.swiftpm/xcode/xcshareddata/xcschemes/Connect4Lib.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/.swiftpm/xcode/xcshareddata/xcschemes/Connect4Lib.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/.swiftpm/xcode/xcshareddata/xcschemes/Connect4LibTests.xcscheme" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/StandardRule_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/StandardRule_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -132,7 +120,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675278902839</updated>
-      <workItem from="1675278903990" duration="5778000" />
+      <workItem from="1675278903990" duration="6220000" />
     </task>
     <servers />
   </component>

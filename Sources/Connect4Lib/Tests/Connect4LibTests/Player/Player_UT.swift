@@ -7,8 +7,8 @@ import XCTest
 
 class Player_UT: XCTestCase {
     func testInit() throws {
-        func expect(initPlayerWithId id: Int, andPlayingId playingId: Int, shouldBeNotNil notNil: Bool) {
-            let player = Player(withId: id, andPlayingId: playingId)
+        func expect(initPlayerWithId id: uint64, shouldBeNotNil notNil: Bool) {
+            let player = Player(withId: id)
 
             if !notNil {
                 XCTAssertNil(player)
@@ -17,28 +17,38 @@ class Player_UT: XCTestCase {
 
             XCTAssertNotNil(player)
             XCTAssertEqual(id, player?.id)
-            XCTAssertEqual(playingId, player?.playingId)
         }
 
-        expect(initPlayerWithId: 1, andPlayingId: 1, shouldBeNotNil: true)
-        expect(initPlayerWithId: Int.max, andPlayingId: 1, shouldBeNotNil: true)
-        expect(initPlayerWithId: 0, andPlayingId: 1, shouldBeNotNil: false)
-        expect(initPlayerWithId: -1, andPlayingId: 1, shouldBeNotNil: false)
-        expect(initPlayerWithId: Int.min, andPlayingId: 1, shouldBeNotNil: false)
-        expect(initPlayerWithId: 1, andPlayingId: 0, shouldBeNotNil: false)
-        expect(initPlayerWithId: 1, andPlayingId: -1, shouldBeNotNil: false)
-        expect(initPlayerWithId: 1, andPlayingId: Int.min, shouldBeNotNil: false)
-        expect(initPlayerWithId: 1, andPlayingId: Int.max, shouldBeNotNil: true)
+        expect(initPlayerWithId: 1, shouldBeNotNil: true)
+        expect(initPlayerWithId: uint64.max, shouldBeNotNil: true)
+        expect(initPlayerWithId: 0, shouldBeNotNil: true)
+        expect(initPlayerWithId: uint64.min, shouldBeNotNil: true)
     }
 
-    func testPlay() throws {
-        func expect(playOnBoard board: Board, onColumn col: Int, withLastMove lastMove: (Int, Int), andShouldReturn result: BoardResult) {
-            let player = Player(withId: 1, andPlayingId: 1)!
-            var myBoard = board
-            let boardResult = player.play(onBoard: &myBoard, onColumn: col, withLastMove: lastMove)
+    func testPlayOnColumn() throws {
+        func expect(playOnBoard board: Board,
+                    withLastMove lastMove: (Int, Int),
+                    andThisRule rule: IRule,
+                    andShouldReturn column: Int?) {
+            let player = Player(withId: 1)!
+            let result = player.playOnColumn(onBoard: board, withLastMove: lastMove, withThisRule: rule)
 
-            XCTAssertEqual(result, boardResult)
-            XCTAssertEqual(board, myBoard)
+            XCTAssertEqual(column, result)
         }
+
+        var board = Board(withNbRows: 6, andNbColumns: 7)!
+        let rule = StandardRule()
+        expect(playOnBoard: board, withLastMove: (0, 0), andThisRule: rule, andShouldReturn: nil)
+        expect(playOnBoard: board, withLastMove: (5, 4), andThisRule: rule, andShouldReturn: nil)
+
+        // file the grid by 6 and 7 of nil
+        let grid = [[nil, nil, nil, nil, nil, nil, nil],
+                    [nil, nil, nil, nil, nil, nil, nil],
+                    [2, nil, nil, nil, nil, nil, nil],
+                    [2, nil, nil, nil, nil, nil, nil],
+                    [1, nil, nil, 1, nil, nil, nil],
+                    [1, 1, nil, 2, 2, nil, nil]]
+        board = Board(withGrid: grid)!
+        expect(playOnBoard: board, withLastMove: (5, 0), andThisRule: rule, andShouldReturn: nil)
     }
 }

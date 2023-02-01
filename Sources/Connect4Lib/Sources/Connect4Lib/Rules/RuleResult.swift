@@ -24,6 +24,16 @@ public enum InvalidReason {
 
 /// The result of a rule.
 public enum RuleResult : Equatable {
+    /// Compare two rule results.
+    ///
+    /// - Parameters:
+    ///   - lhs: The first rule result.
+    ///   - rhs: The second rule result.
+    /// - Returns: `true` if the two rule results are equal, `false` otherwise.
+    public static func ==(lhs: RuleResult, rhs: RuleResult) -> Bool {
+        String(describing: lhs) == String(describing: rhs)
+    }
+
     /// Unknown result.
     case unknown
     /// The rule is not applicable.
@@ -33,5 +43,5 @@ public enum RuleResult : Equatable {
     /// The rule is applicable and the game is not over.
     case notWon(reason: InvalidReason)
     /// The rule is applicable and the game is over (the player won).
-    case won(id: Int, at: [[Int?]])
+    case won(id: Int, at: [(Int, Int)])
 }

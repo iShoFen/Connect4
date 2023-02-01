@@ -125,4 +125,15 @@ final class Board_UT: XCTestCase {
         expect(board: Board(withGrid: [[1,2,1], [nil,nil,nil], [1,2,1]])!, row: 2, isFull: true)
         expect(board: Board(withGrid: [[1,2,1], [1,2,1], [1,nil,1]])!, row: 2, isFull: false)
     }
+
+    func testEqual() throws {
+        func expect(board1: Board, isEqualTo board2: Board, valid: Bool) {
+            XCTAssertEqual(valid, board1 == board2)
+        }
+
+        expect(board1: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, isEqualTo: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, valid: true)
+        expect(board1: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, isEqualTo: Board(withGrid: [[1,2,1], [1,2,1]])!, valid: false)
+        expect(board1: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, isEqualTo: Board(withGrid: [[1,2], [1,2], [1,2]])!, valid: false)
+        expect(board1: Board(withGrid: [[1,2,1], [1,2,1], [1,2,1]])!, isEqualTo: Board(withGrid: [[1,2,1], [1,2,1], [1,2,2]])!, valid: false)
+    }
 }

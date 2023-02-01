@@ -64,14 +64,9 @@ class StandardRule_UT: XCTestCase {
                 [nil, nil, nil, nil, nil, nil, nil],
                 [2, 2, nil, 2, nil, nil, nil],
                 [1, 1, 1, 1, 2, 2, 2]]
-        var winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [1, 1, 1, 1, nil, nil, nil]]
+        var winingIndexes = [(5, 0), (5, 1), (5, 2), (5, 3)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (5, 3), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (5, 3), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[nil, nil, nil, nil, nil, nil, nil],
                 [nil, nil, nil, nil, nil, nil, nil],
@@ -79,14 +74,9 @@ class StandardRule_UT: XCTestCase {
                 [nil, nil, nil, nil, nil, nil, nil],
                 [2, 2, 2, nil, nil, nil, nil],
                 [1, 2, 2, 1, 1, 1, 1]]
-        winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, 1, 1, 1, 1]]
+        winingIndexes = [(5, 3), (5, 4), (5, 5), (5, 6)]
         board = Board(withGrid: grid)!
-       expect(board: board, withLastMove: (5, 4), andValidity: .won(id: 1, at: winingGrid))
+       expect(board: board, withLastMove: (5, 4), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[nil, nil, nil, nil, nil, nil, nil],
                 [nil, nil, nil, nil, nil, nil, nil],
@@ -103,14 +93,9 @@ class StandardRule_UT: XCTestCase {
                 [1, nil, nil, nil, nil, nil, nil],
                 [2, 2, nil, nil, nil, nil, nil],
                 [2, 2, 2, nil, nil, nil, nil]]
-        winingGrid = [[1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil]]
+        winingIndexes = [(0, 0), (1, 0), (2, 0), (3, 0)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (0, 0), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (0, 0), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[nil, nil, nil, nil, nil, nil, nil],
                 [1, nil, nil, nil, nil, nil, nil],
@@ -118,14 +103,9 @@ class StandardRule_UT: XCTestCase {
                 [1, nil, nil, nil, nil, nil, nil],
                 [1, 2, nil, nil, nil, nil, nil],
                 [2, 2, 2, nil, nil, nil, nil]]
-        winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [1, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil]]
+        winingIndexes = [(1, 0), (2, 0), (3, 0), (4, 0)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (1, 0), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (1, 0), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[1, nil, nil, nil, nil, nil, nil],
                 [2, nil, nil, nil, nil, nil, nil],
@@ -142,14 +122,9 @@ class StandardRule_UT: XCTestCase {
                 [nil, nil, nil, 1, 1, 2, 1],
                 [nil, nil, nil, 2, 2, 1, 1],
                 [nil, nil, nil, 2, 2, 2, 1]]
-        winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, 1, nil, nil, nil],
-                      [nil, nil, nil, nil, 1, nil, nil],
-                      [nil, nil, nil, nil, nil, 1, nil],
-                      [nil, nil, nil, nil, nil, nil, 1]]
+        winingIndexes = [(2, 3), (3, 4), (4, 5), (5, 6)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (2, 3), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (2, 3), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[1, nil, nil, nil, nil, nil, nil],
                 [1, 1, nil, nil, nil, nil, nil],
@@ -157,14 +132,9 @@ class StandardRule_UT: XCTestCase {
                 [2, 2, 2, 1, nil, nil, nil],
                 [1, 2, 1, 2, 2, nil, nil],
                 [2, 2, 2, 1, 2, 1, nil]]
-        winingGrid = [[1, nil, nil, nil, nil, nil, nil],
-                      [nil, 1, nil, nil, nil, nil, nil],
-                      [nil, nil, 1, nil, nil, nil, nil],
-                      [nil, nil, nil, 1, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil]]
+        winingIndexes = [(0, 0), (1, 1), (2, 2), (3, 3)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (0, 0), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (0, 0), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[nil, nil, nil, nil, 1, nil, nil],
                 [nil, nil, nil, nil, 2, 1, nil],
@@ -181,14 +151,9 @@ class StandardRule_UT: XCTestCase {
                 [1, 2, 1, 2, nil, nil, nil],
                 [1, 1, 1, 2, nil, nil, nil],
                 [1, 2, 2, 2, 1, nil, nil]]
-    winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-              [nil, nil, nil, nil, nil, nil, nil],
-              [nil, nil, nil, 1, nil, nil, nil],
-              [nil, nil, 1, nil, nil, nil, nil],
-              [nil, 1, nil, nil, nil, nil, nil],
-              [1, nil, nil, nil, nil, nil, nil]]
+    winingIndexes = [(2, 3), (3,2), (4,1), (5, 0)]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (2, 3), andValidity: .won(id: 1, at: winingGrid))
+        expect(board: board, withLastMove: (2, 3), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[nil, nil, nil, nil, nil, nil, 1],
                 [nil, nil, nil, nil, nil, 2, 1],
@@ -196,14 +161,9 @@ class StandardRule_UT: XCTestCase {
                 [nil, nil, nil, 1, 2, 1, 2],
                 [nil, nil, 1, 1, 2, 1, 2],
                 [nil, 1, 1, 2, 1, 2, 2]]
-        winingGrid = [[nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, nil, nil, nil],
-                      [nil, nil, nil, nil, 1, nil, nil],
-                      [nil, nil, nil, 1, nil, nil, nil],
-                      [nil, nil, 1, nil, nil, nil, nil],
-                      [nil, 1, nil, nil, nil, nil, nil]]
         board = Board(withGrid: grid)!
-        expect(board: board, withLastMove: (3, 3), andValidity: .won(id: 1, at: winingGrid))
+        winingIndexes = [(2, 4), (3, 3), (4, 2), (5, 1)]
+        expect(board: board, withLastMove: (3, 3), andValidity: .won(id: 1, at: winingIndexes))
 
         grid = [[2, 2, 1, nil, nil, nil, nil],
                 [2, 1, 2, nil, nil, nil, nil],

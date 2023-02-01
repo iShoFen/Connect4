@@ -7,8 +7,27 @@ import Foundation
 /// An AI player.
 public class DumbAI : Player {
 
-    public override init?(withId id: Int, andPlayingId playingId: Int = 1) {
-        super.init(withId: id, andPlayingId: playingId)
+    /// Creates a AI player.
+    ///
+    /// - Parameter id: The player's id.
+    ///
+    /// - Returns: A new AI player.
+    ///
+    /// - Note: The id must be 0, prefer using the `init()` CI instead.
+    public override init?(withId id: uint64) {
+        guard id == 0 else {
+            return nil
+        }
+        super.init(withId: id)
+    }
+
+    /// Creates a new AI player.
+    ///
+    /// - Returns: A new AI player.
+    ///
+    /// - Note: CI to create a new AI player.
+    public convenience init() {
+        self.init(withId: 0)!
     }
 
     /// Play on a board.
@@ -17,27 +36,34 @@ public class DumbAI : Player {
     ///   - board: The board to play on.
     ///   - column: The column to play on.
     ///   - lastMove: The last move played on the board.
+    ///   - rule: The rule to apply.
     ///
-    /// - Returns: A `BoardResult` indicating if the move was valid.
+    /// - Returns: The column to play on.
     ///
-    /// - Note: Try to play on the column next to the last move, if it's not possible, play on a random column.
-    override public func play(onBoard board: inout Board, onColumn column: Int, withLastMove lastMove: (row: Int, column: Int)) -> BoardResult {
-        let row = lastMove.row
+    /// - Note: Play around the last move and if it's not possible, play randomly.
+    override public func playOnColumn(onBoard board: Board,
+                              withLastMove lastMove: (row: Int, column: Int),
+                              withThisRule rule: IRule) -> Int? {
+        var myBoard = board
         let column = lastMove.column
         let columnOffset = Int.random(in: -1...1)
+        let playingId = myBoard.grid[column][lastMove.row] == 1 ? 2 : 1
 
         if column + columnOffset >= 0 && column + columnOffset < board.nbColumns {
-            if board.grid[row][column + columnOffset] == nil {
-                return board.insertPiece(by: playingId, atColumn: column + columnOffset)
+            let result = myBoard.insertPiece(by: playingId, atColumn: column + columnOffset)
+            if result != .failed(reason: .columnFull)
+            {
+                return column + columnOffset
             }
         }
 
-        for i in 0..<board.nbColumns {
-            if board.grid[row][i] == nil {
-                return board.insertPiece(by: playingId, atColumn: i)
+        for i in 0..<myBoard.nbColumns {
+            let result = myBoard.insertPiece(by: playingId, atColumn: i)
+            if result != .failed(reason: .columnFull) {
+                return i
             }
         }
 
-        return .unknown
+        return nil
     }
 }

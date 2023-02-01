@@ -7,9 +7,7 @@ import Foundation
 /// A player that can play on a board.
 public class Player {
     /// The player's id.
-    public let id: Int
-    /// The player's playing id.
-    public let playingId: Int
+    public let id: uint64
 
     /// Creates a new player.
     /// - Parameters:
@@ -17,13 +15,8 @@ public class Player {
     ///   - playingId: The player's playing id.
     ///
     /// - Returns: A new player.
-    public init?(withId id: Int, andPlayingId playingId: Int) {
-        guard id > 0 && playingId > 0 else {
-            return nil
-        }
-
+    public init?(withId id: uint64) {
         self.id = id
-        self.playingId = playingId
     }
 
     /// Play on a board.
@@ -32,9 +25,14 @@ public class Player {
     ///   - board: The board to play on.
     ///   - column: The column to play on.
     ///   - lastMove: The last move played on the board.
+    ///   - rule: The rule to apply.
     ///
-    /// - Returns: A `BoardResult` indicating if the move was valid.
-    public func play(onBoard board: inout Board, onColumn column: Int, withLastMove lastMove: (row: Int, column: Int)) -> BoardResult {
-        .unknown
+    /// - Returns: A `nil` because it's an abstract class.
+    ///
+    /// - Note: This method is abstract and should be overriden.
+    public func playOnColumn(onBoard board: Board,
+                             withLastMove lastMove: (row: Int, column: Int),
+                             withThisRule rule: IRule) -> Int? {
+        nil
     }
 }

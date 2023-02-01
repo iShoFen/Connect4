@@ -9,6 +9,9 @@ public class  Human : Player, Equatable {
     /// The player's pseudo.
     public var pseudo: String
 
+    /// The scanner to use.
+    private let scanner: () -> String
+
     /// Compares two human players.
     ///
     /// - Parameters:
@@ -17,7 +20,7 @@ public class  Human : Player, Equatable {
     ///
     /// - Returns: `true` if the two players are equal, `false` otherwise.
     public static func ==(lhs: Human, rhs: Human) -> Bool {
-        lhs.id == rhs.id && lhs.playingId == rhs.playingId
+        lhs.id == rhs.id
     }
 
     /// Creates a new human player.
@@ -26,9 +29,21 @@ public class  Human : Player, Equatable {
     ///   - id: The player's id.
     ///   - playingId: The player's playing id.
     ///   - pseudo: The player's pseudo.
-    public init?(withId id: Int, andPlayingId playingId: Int = 1, andPseudo pseudo: String = "Player") {
+    ///   - scanner: The scanner to use.
+    public init?(withId id: uint64,
+                 andPseudo pseudo: String = "Player",
+                 andScanner scanner: @escaping () -> String) {
+        guard id > 0 else {
+            return nil
+        }
+
+        guard !pseudo.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            return nil
+        }
+
         self.pseudo = pseudo
-        super.init(withId: id, andPlayingId: playingId)
+        self.scanner = scanner
+        super.init(withId: id)
     }
 
     /// Play on a board.
@@ -37,11 +52,18 @@ public class  Human : Player, Equatable {
     ///   - board: The board to play on.
     ///   - column: The column to play on.
     ///   - lastMove: The last move played on the board.
+    ///   - rule: The rule to apply.
     ///
-    /// - Returns: A `BoardResult` indicating if the move was valid.
+    /// - Returns: The column to play on.
     ///
-    /// - Note: Simply inserts a piece on the board.
-    override public func play(onBoard board: inout Board, onColumn column: Int, withLastMove lastMove: (row: Int, column: Int)) -> BoardResult {
-        board.insertPiece(by: playingId, atColumn: column)
+    /// - Note: Ask the player to enter a column.
+    override public func playOnColumn(onBoard board: Board,
+                              withLastMove lastMove: (row: Int, column: Int),
+                              withThisRule rule: IRule) -> Int? {
+        guard let column = Int(scanner()) else {
+            return nil
+        }
+
+        return column
     }
 }

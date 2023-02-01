@@ -47,9 +47,9 @@ public struct StandardRule : IRule {
             return .invalid(reason: .EmptyLastMove)
         }
 
-        let winingBoard = isWin(onBoard: board, withLastMove: lastMove)
-        if let winingBoard {
-            return .won(id: board.grid[lastMove.row][lastMove.column]!, at: winingBoard)
+        let winingIndexes = isWin(onBoard: board, withLastMove: lastMove)
+        if let winingIndexes {
+            return .won(id: board.grid[lastMove.row][lastMove.column]!, at: winingIndexes)
         }
 
         guard !board.isFull() else {
@@ -67,10 +67,10 @@ public struct StandardRule : IRule {
     /// - Returns: A `[[Int?]]` indicating the winning board.
     ///
     /// - Note: Check if the last move won the game horizontally, vertically, or diagonally.
-    private func isWin(onBoard board: Board, withLastMove lastMove: (row: Int, column: Int)) -> [[Int?]]?
+    private func isWin(onBoard board: Board, withLastMove lastMove: (row: Int, column: Int)) -> [(Int, Int)]?
     {
         let playerId = board.grid[lastMove.row][lastMove.column]
-        var winingBoard: [[Int?]] = Array(repeating: Array(repeating: nil, count: board.nbColumns), count: board.nbRows)
+        var winingBoard: [(Int, Int)] = []
         var nbPieces = 1
 
         let directions: [(row: Int, column: Int)] = [
@@ -86,7 +86,7 @@ public struct StandardRule : IRule {
         var directionsIndex = 0
         for direction in directions {
             if directionsIndex % 2 == 0 {
-                winingBoard = Array(repeating: Array(repeating: nil, count: board.nbColumns), count: board.nbRows)
+                winingBoard = []
                 nbPieces = 1
             }
 
@@ -95,13 +95,15 @@ public struct StandardRule : IRule {
             while row >= 0 && row < board.nbRows && col >= 0 && col < board.nbColumns {
                 if board.grid[row][col] == playerId {
                     nbPieces += 1
-                    winingBoard[row][col] = playerId
+                    winingBoard.append((row, col))
                 } else {
                     break
                 }
 
                 if nbPieces >= nbPiecesToWin {
-                    winingBoard[lastMove.row][lastMove.column] = playerId
+                    winingBoard.append((lastMove.row, lastMove.column))
+                    // Sort the array by row then column
+                    winingBoard.sort(by: { (a, b) in a.0 == b.0 ? a.1 < b.1 : a.0 < b.0 })
                     return winingBoard
                 }
                 row += direction.row

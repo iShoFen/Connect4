@@ -73,6 +73,4 @@ if var board = Board(withNbRows: 1, andNbColumns: 1) {
     print(board)
     insertPiece(by: 1, atColumn: 0, in: &board)
     print(board.isFull())
-
-    var player1 = Human(withId: 1, andPseudo: "samuel")!
 }

@@ -26,6 +26,7 @@ class Human_UT: XCTestCase {
             XCTAssertNotNil(human)
             XCTAssertEqual(id, human!.id)
             XCTAssertEqual(name ?? "Player", human!.pseudo)
+            XCTAssertEqual(0, human!.score)
         }
 
         expect(initHumanWithId: 1, andName: nil, andScanner: { "" }, thatShouldBeNotNil: true)
@@ -35,6 +36,52 @@ class Human_UT: XCTestCase {
         expect(initHumanWithId: 0, andName: nil, andScanner: { "" }, thatShouldBeNotNil: false)
         expect(initHumanWithId: uint64.min, andName: nil, andScanner: { "" }, thatShouldBeNotNil: false)
         expect(initHumanWithId: uint64.max, andName: nil, andScanner: { "" }, thatShouldBeNotNil: true)
+    }
+
+    func testGetSetName() throws {
+        func expect(setNameOnHuman human: Human,
+                    withName name: String,
+                    andName name2: String,
+                    thatShouldBeChange change: Bool) {
+            let oldName = human.pseudo
+            human.pseudo = name
+            XCTAssertEqual(change ? name : oldName, human.pseudo)
+
+            human.pseudo = name2
+            XCTAssertEqual(change ? name2 : oldName, human.pseudo)
+        }
+
+        let human = Human(withId: 1, andPseudo: "name", andScanner: { "" })!
+        expect(setNameOnHuman: human, withName: "hi", andName: "ya", thatShouldBeChange: true)
+
+        let  human2 = Human(withId: 1, andPseudo: "hello", andScanner: { "" })!
+        expect(setNameOnHuman: human2, withName: "", andName: " ", thatShouldBeChange: false)
+
+        let human3 = Human(withId: 1, andPseudo: "chose", andScanner: { "" })!
+        expect(setNameOnHuman: human3, withName: "  ", andName: "    ", thatShouldBeChange: false)
+    }
+
+    func testGetSetScore() throws {
+        func expect(setScoreOnHuman human: Human,
+                    withScore score: UInt,
+                    andScore score2: UInt,
+                    thatShouldBeChange change: Bool) {
+            let oldScore = human.score
+            human.score = score
+            XCTAssertEqual(change ? score : oldScore, human.score)
+
+            human.score = score2
+            XCTAssertEqual(change ? score2 : oldScore, human.score)
+        }
+
+        let human = Human(withId: 1, andScanner: { "" })!
+        expect(setScoreOnHuman: human, withScore: 1, andScore: 2, thatShouldBeChange: true)
+
+        let  human2 = Human(withId: 1, andScanner: { "" })!
+        expect(setScoreOnHuman: human2, withScore: 4, andScore: 26, thatShouldBeChange: true)
+
+        let human3 = Human(withId: 1, andScanner: { "" })!
+        expect(setScoreOnHuman: human3, withScore: UInt.max, andScore: UInt.max, thatShouldBeChange: true)
     }
 
     func testEquals() throws {

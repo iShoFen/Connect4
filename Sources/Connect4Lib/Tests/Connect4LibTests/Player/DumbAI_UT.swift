@@ -31,6 +31,17 @@ class DumbAI_UT: XCTestCase {
         expect(initDumbAIWithId: nil, andShouldNotBeNull: true)
     }
 
+    func testConvenienceInit() throws {
+        var dumbAI = DumbAI()
+        XCTAssertEqual(0, dumbAI.id)
+    }
+
+    func testEquals() throws {
+        let ai1 = DumbAI(withId: 0)!
+        let ai2 = DumbAI(withId: 0)!
+        XCTAssertEqual(ai1, ai2)
+    }
+
     func testPlay() throws {
         func expect(playOnBoard board: Board,
                     withLastMove lastMove: (Int, Int),

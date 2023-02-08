@@ -5,9 +5,20 @@
 import Foundation
 
 /// A player that can play on a board.
-public class Player {
+public class Player: Equatable {
     /// The player's id.
     public let id: uint64
+
+    /// Compares two players.
+    ///
+    /// - Parameters:
+    ///   - lhs: The first player.
+    ///   - rhs: The second player.
+    ///
+    /// - Returns: `true` if the two players are equal, `false` otherwise.
+    public static func ==(lhs: Player, rhs: Player) -> Bool {
+        lhs.id == rhs.id
+    }
 
     /// Creates a new player.
     /// - Parameters:

@@ -5,23 +5,27 @@
 import Foundation
 
 /// A human player.
-public class  Human : Player, Equatable {
+public class  Human : Player {
     /// The player's pseudo.
-    public var pseudo: String
+    public var pseudo: String {
+        get {
+            _pseudo
+        }
+        set {
+            guard !newValue.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                return
+            }
+
+            _pseudo = newValue
+        }
+    }
+    private var _pseudo: String
+
+    /// The player's score.
+    public var score: UInt = 0
 
     /// The scanner to use.
     private let scanner: () -> String
-
-    /// Compares two human players.
-    ///
-    /// - Parameters:
-    ///   - lhs: The first player.
-    ///   - rhs: The second player.
-    ///
-    /// - Returns: `true` if the two players are equal, `false` otherwise.
-    public static func ==(lhs: Human, rhs: Human) -> Bool {
-        lhs.id == rhs.id
-    }
 
     /// Creates a new human player.
     ///
@@ -41,7 +45,7 @@ public class  Human : Player, Equatable {
             return nil
         }
 
-        self.pseudo = pseudo
+        _pseudo = pseudo
         self.scanner = scanner
         super.init(withId: id)
     }

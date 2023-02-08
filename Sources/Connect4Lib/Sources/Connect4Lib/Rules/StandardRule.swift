@@ -5,32 +5,32 @@
 import Foundation
 
 public struct StandardRule : IRule {
-    public let minRow: Int = 6
+    public let row: Int = 6
 
-    public let maxRow: Int = 6
-
-    public let minColumn: Int = 7
-
-    public let maxColumn: Int = 7
+    public let column: Int = 7
 
     public let nbPiecesToWin: Int = 4
 
     public let isDiagonalWinAllowed: Bool = true
 
+    public func createBoard() -> Board {
+        Board(withNbRows: row, andNbColumns: column)!
+    }
+
     public func isValid(board: Board) -> RuleResult {
-        guard board.nbRows >= minRow else {
+        guard board.nbRows >= row else {
             return .invalid(reason: .TooFewRows)
         }
 
-        guard board.nbRows <= maxRow else {
+        guard board.nbRows <= row else {
             return .invalid(reason: .TooManyRows)
         }
 
-        guard board.nbColumns >= minColumn  else {
+        guard board.nbColumns >= column  else {
             return .invalid(reason: .TooFewColumns)
         }
 
-        guard board.nbColumns <= maxColumn else {
+        guard board.nbColumns <= column else {
             return .invalid(reason: .TooManyColumns)
         }
 

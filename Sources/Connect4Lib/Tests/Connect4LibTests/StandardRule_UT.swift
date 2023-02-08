@@ -8,12 +8,23 @@ import XCTest
 class StandardRule_UT: XCTestCase {
     func testInit() throws {
         let rule = StandardRule()
-        XCTAssertEqual(6, rule.minRow)
-        XCTAssertEqual(6, rule.maxRow)
-        XCTAssertEqual(7, rule.minColumn)
-        XCTAssertEqual(7, rule.maxColumn)
+        XCTAssertEqual(6, rule.row)
+        XCTAssertEqual(7, rule.column)
         XCTAssertEqual(4, rule.nbPiecesToWin)
         XCTAssertTrue(rule.isDiagonalWinAllowed)
+    }
+
+    func testCreateBoard() throws {
+        let rule = StandardRule()
+        let board = rule.createBoard()
+        XCTAssertEqual(6, board.nbRows)
+        XCTAssertEqual(7, board.nbColumns)
+
+        for row in 0..<board.nbRows {
+            for column in 0..<board.nbColumns {
+                XCTAssertNil(board.grid[row][column])
+            }
+        }
     }
 
     func testIsValid() throws {

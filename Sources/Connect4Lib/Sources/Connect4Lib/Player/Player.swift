@@ -5,7 +5,7 @@
 import Foundation
 
 /// A player that can play on a board.
-public class Player: Equatable {
+public class Player: Equatable, Hashable {
     /// The player's id.
     public let id: uint64
 
@@ -18,6 +18,13 @@ public class Player: Equatable {
     /// - Returns: `true` if the two players are equal, `false` otherwise.
     public static func ==(lhs: Player, rhs: Player) -> Bool {
         lhs.id == rhs.id
+    }
+
+    /// Hashes the player.
+    ///
+    /// - Parameter hasher: The hasher to use.
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 
     /// Creates a new player.

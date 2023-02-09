@@ -41,6 +41,22 @@ class Player_UT: XCTestCase {
         expect(equalsPlayer: player3, andPlayer: player4, thatShouldBe: false)
     }
 
+    public func testHash() throws {
+        func expect(hashPlayer1 player1: Player,
+                    andPlayer2 player2: Player,
+                    thatShouldBeEquals equals: Bool) {
+            XCTAssertEqual(equals, player1.hashValue == player2.hashValue)
+        }
+
+        let player1 = Player(withId: 1)!
+        let player2 = Player(withId: 1)!
+        expect(hashPlayer1: player1, andPlayer2: player2, thatShouldBeEquals: true)
+
+        let player3 = Player(withId: 2)!
+        let player4 = Player(withId: 1)!
+        expect(hashPlayer1: player3, andPlayer2: player4, thatShouldBeEquals: false)
+    }
+
     func testPlayOnColumn() throws {
         func expect(playOnBoard board: Board,
                     withLastMove lastMove: (Int, Int),

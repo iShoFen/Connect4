@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/GameResponse.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/BoardResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/BoardResult.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/BoardResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/BoardResult.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +82,7 @@
       <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board" />
     </key>
   </component>
-  <component name="RunManager" selected="Swift Package Test.Human_UT">
+  <component name="RunManager" selected="Swift Package Test.DumbAI_UT.testPlay">
     <configuration name="Connect4App" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4App" TARGET_NAME="Connect4App" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="Connect4App" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Connect4App" RUN_TARGET_NAME="Connect4App" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -89,19 +97,19 @@
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Board_UT.testDescription" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Board_UT" TEST_METHOD="testDescription" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Connect4LibTests" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DumbAI_UT.testConvenienceInit" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="DumbAI_UT" TEST_METHOD="testConvenienceInit" TEST_MODE="SUITE_TEST">
-      <method v="2">
-        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
-        <option name="BeforeTestRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DumbAI_UT.testEquals" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="DumbAI_UT" TEST_METHOD="testEquals" TEST_MODE="SUITE_TEST">
+    <configuration name="DumbAI_UT.testPlay" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="DumbAI_UT" TEST_METHOD="testPlay" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -113,13 +121,13 @@
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Human_UT.testGetSetName" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Human_UT" TEST_METHOD="testGetSetName" TEST_MODE="SUITE_TEST">
+    <configuration name="Human_UT.testHash" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Human_UT" TEST_METHOD="testHash" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Human_UT.testGetSetScore" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Human_UT" TEST_METHOD="testGetSetScore" TEST_MODE="SUITE_TEST">
+    <configuration name="Player_UT.testHash" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Player_UT" TEST_METHOD="testHash" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -129,19 +137,19 @@
       <item itemvalue="Application.Connect4App" />
       <item itemvalue="Swift Package Run.Connect4Lib" />
       <item itemvalue="Swift Package Test.Connect4LibTests" />
-      <item itemvalue="Swift Package Test.Human_UT.testGetSetName" />
-      <item itemvalue="Swift Package Test.Human_UT.testGetSetScore" />
-      <item itemvalue="Swift Package Test.DumbAI_UT.testConvenienceInit" />
-      <item itemvalue="Swift Package Test.DumbAI_UT.testEquals" />
+      <item itemvalue="Swift Package Test.Board_UT.testDescription" />
+      <item itemvalue="Swift Package Test.DumbAI_UT.testPlay" />
+      <item itemvalue="Swift Package Test.Human_UT.testHash" />
+      <item itemvalue="Swift Package Test.Player_UT.testHash" />
       <item itemvalue="Swift Package Test.Human_UT" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Swift Package Test.DumbAI_UT.testPlay" />
+        <item itemvalue="Swift Package Test.Human_UT.testHash" />
+        <item itemvalue="Swift Package Test.Player_UT.testHash" />
+        <item itemvalue="Swift Package Test.Board_UT.testDescription" />
         <item itemvalue="Swift Package Test.Human_UT" />
-        <item itemvalue="Swift Package Test.Human_UT.testGetSetScore" />
-        <item itemvalue="Swift Package Test.Human_UT.testGetSetName" />
-        <item itemvalue="Swift Package Test.DumbAI_UT.testEquals" />
-        <item itemvalue="Swift Package Test.DumbAI_UT.testConvenienceInit" />
       </list>
     </recent_temporary>
   </component>

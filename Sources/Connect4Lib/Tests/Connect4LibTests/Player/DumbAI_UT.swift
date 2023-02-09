@@ -42,6 +42,12 @@ class DumbAI_UT: XCTestCase {
         XCTAssertEqual(ai1, ai2)
     }
 
+    func testHash() throws {
+        let ai1 = DumbAI(withId: 0)!
+        let ai2 = DumbAI(withId: 0)!
+        XCTAssertEqual(ai1.hashValue, ai2.hashValue)
+    }
+
     func testPlay() throws {
         func expect(playOnBoard board: Board,
                     withLastMove lastMove: (Int, Int),
@@ -93,5 +99,14 @@ class DumbAI_UT: XCTestCase {
                 [1, 1, 1, nil, nil, nil, nil]]
         board = Board(withGrid: grid)!
         expect(playOnBoard: board, withLastMove: (0, 0), andThisRule: rule, andShouldReturn: [3])
+
+        grid = [[1, 2, 2, 1, 1, 2, 2],
+                [1, 1, 2, 2, 2, 1, 1],
+                [1, 1, 2, 1, 1, 2, 2],
+                [2, 1, 1, 2, 2, 1, 1],
+                [2, 2, 1, 1, 1, 2, 2],
+                [1, 1, 1, 2, 2, 1, 1]]
+        board = Board(withGrid: grid)!
+        expect(playOnBoard: board, withLastMove: (0, 0), andThisRule: rule, andShouldReturn: nil)
     }
 }

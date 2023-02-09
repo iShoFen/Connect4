@@ -5,7 +5,7 @@
 import Foundation
 
 /// Extension of the GameResponse enum
-extension FailedReason {
+public extension FailedReason {
     /// Convert a failed reason to a board error
     ///
     /// - Returns: The board error.
@@ -24,13 +24,13 @@ extension FailedReason {
 }
 
 /// Extension of the GameResponse enum
-extension InvalidReason {
+public extension InvalidReason {
     /// Convert an invalid reason to a rule error
     ///
     /// - Returns: The rule error.
     ///
     /// - Note: This function will crash if the invalid reason is not a rule error.
-    internal func toInitError() -> InitialisationError {
+    internal func toInitError() throws -> InitialisationError {
         switch self {
         case .Unknown:
             return .Unknown
@@ -44,7 +44,7 @@ extension InvalidReason {
             return .TooManyColumns
         case .BoardFull:
             return .BoardFull
-        default: preconditionFailure("Invalid reason \(self) is not a rule error")
+        default: throw InitialisationError.Unknown
         }
     }
 }

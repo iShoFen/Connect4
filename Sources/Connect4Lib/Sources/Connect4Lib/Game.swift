@@ -32,7 +32,7 @@ struct Game {
     ///   - rule: The rule of the game
     ///   - players: The players of the game
     ///   - display: The display function
-    public init?(gameWithBoard board: Board, andRule rule: IRule, withPlayers players: [Player], andDisplay display: @escaping (String) -> Void) {
+    public init?(withBoard board: Board, andRule rule: IRule, withPlayers players: [Player], andDisplay display: @escaping (String) -> Void) {
         guard (rule.isValid(board: board) == .valid) else {
             return nil
         }
@@ -55,8 +55,8 @@ struct Game {
     ///   - rule: The rule of the game
     ///   - players: The players of the game
     ///   - display: The display function
-    public init?(gameWithRule rule: IRule, andPlayers players: [Player], withDisplay display: @escaping (String) -> Void) {
-        self.init(gameWithBoard: rule.createBoard(), andRule: rule, withPlayers: players, andDisplay: display)
+    public init?(withRule rule: IRule, andPlayers players: [Player], withDisplay display: @escaping (String) -> Void) {
+        self.init(withBoard: rule.createBoard(), andRule: rule, withPlayers: players, andDisplay: display)
     }
 
     /// Reset the game

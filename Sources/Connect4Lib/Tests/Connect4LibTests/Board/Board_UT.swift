@@ -75,7 +75,7 @@ final class Board_UT: XCTestCase {
                 return
             }
 
-            XCTAssertEqual(.Added(id: id, row: row + 1, column: column + 1), result)
+            XCTAssertEqual(.Added(id: id, row: row, column: column), result)
         }
 
         expect(insertPieceBy: 1, atRow: 0, andAtColumn: 0, inBoard: Board(withNbRows: 3, andNbColumns: 2)!, shouldFail: nil)
@@ -93,7 +93,7 @@ final class Board_UT: XCTestCase {
                 return
             }
 
-            XCTAssertEqual(.Deleted(id: id, row: row + 1, column: column + 1), result)
+            XCTAssertEqual(.Deleted(id: id, row: row, column: column), result)
         }
 
         expect(deletePieceBy: 1, atRow: 0, andAtColumn: 0, inBoard: Board(withGrid: [[1,2,1]])!, shouldFail: nil)

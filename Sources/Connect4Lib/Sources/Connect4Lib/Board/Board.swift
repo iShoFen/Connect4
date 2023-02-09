@@ -78,7 +78,7 @@ public struct Board : CustomStringConvertible, Equatable {
         
         for row in 0..<nbRows {
             if insertPiece(by: id, atRow: row, andAtColumn: column) {
-                return .Added(id: id, row: row + 1, column: column + 1)
+                return .Added(id: id, row: row, column: column)
             }
         }
         
@@ -104,7 +104,7 @@ public struct Board : CustomStringConvertible, Equatable {
         for row in (0..<nbRows).reversed() {
             let (id, isDeleted) = removePiece(atRow: row, andAtColumn: column)
             if isDeleted {
-                return .Deleted(id: id!, row: row + 1, column: column + 1)
+                return .Deleted(id: id!, row: row, column: column)
             }
         }
 

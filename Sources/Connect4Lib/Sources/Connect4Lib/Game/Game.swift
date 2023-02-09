@@ -5,7 +5,7 @@
 import Foundation
 
 /// The game is the main class of the library. It is used to create a game and to start it.
-struct Game {
+public struct Game {
 
     /// The board of the game
     public var board: Board
@@ -14,10 +14,10 @@ struct Game {
     public let rule: IRule
 
     /// The players of the game
-    public let players: [Player: Int]
+    public let players: [Player]
 
-    /// The current player
-    private var currentPlayer: Player
+    /// The current player index
+    private var currentPlayer = -1
 
     /// The last move played
     private var lastMove: (row: Int, column: Int) = (-1, -1)
@@ -39,9 +39,11 @@ struct Game {
     throws {
         let result = rule.isValid(board: board)
         guard result == .Valid else {
-            let someReason: InvalidReason = .Unknown
-            precondition(result == .Invalid(reason: someReason))
-            throw GameResponse.FailedInit(reason: someReason.toInitError())
+            if case let .Invalid(reason) = result {
+                throw GameResponse.FailedInit(reason: try! reason.toInitError())
+            }
+
+            preconditionFailure("The result of the rule is not valid or invalid")
         }
 
 
@@ -49,12 +51,12 @@ struct Game {
             throw GameResponse.FailedInit(reason: .NotEnoughPlayers(expected: 2, actual: players.count))
         }
 
-        self.players = Dictionary(uniqueKeysWithValues: players.enumerated().map { ($1, $0 + 1) })
+        self.players = players
         self.board = board
         self.rule = rule
         self.display = display
 
-        currentPlayer = self.players.keys.randomElement()!
+        currentPlayer = Int.random(in: 0..<players.count)
     }
 
     /// Create a game with a rule, players and a display function
@@ -70,7 +72,7 @@ struct Game {
     /// Reset the game
     public mutating func resetGame() {
         board = rule.createBoard()
-        currentPlayer = players.keys.randomElement()!
+        currentPlayer = Int.random(in: 0..<players.count)
     }
 
     /// Try to play a move
@@ -79,14 +81,8 @@ struct Game {
     private mutating func play() {
         var validMove = false
         repeat {
-            let column = currentPlayer.playOnColumn(onBoard: board, withLastMove: lastMove, withThisRule: rule)
-
-            if let column {
-                validMove = validateMove(onColumn: column)
-            } else {
-                display(.FailedPlays(reason: .NoColumn))
-            }
-
+            let column = players[currentPlayer].playOnColumn(onBoard: board, withLastMove: lastMove, withThisRule: rule)!
+            validMove = validateMove(onColumn: column)
         } while !validMove
     }
 
@@ -95,7 +91,7 @@ struct Game {
     /// - Parameter column: The column to play on
     /// - Returns: True if the piece was added, false otherwise
     private mutating func validateMove(onColumn column: Int) -> Bool {
-        let result = board.insertPiece(by: players[currentPlayer]!, atColumn: column)
+        let result = board.insertPiece(by: currentPlayer + 1, atColumn: column)
         switch result {
             case let .Added(id, row, column):
                 lastMove = (row, column)
@@ -123,7 +119,7 @@ struct Game {
                     display(.NoWinner)
                     return true
                 }
-            default: break
+            default: preconditionFailure("Unexpected result")
         }
 
         return false
@@ -136,10 +132,11 @@ struct Game {
         var isOver = false
         while !isOver {
             display(.Show(board: board.grid))
-            display(.PlayerTurn(id: players[currentPlayer]!))
+            display(.PlayerTurn(id: currentPlayer + 1))
             play()
             let result = rule.isGameOver(onBoard: board, withLastMove: lastMove)
             isOver = validateGameState(withResult: result)
+            currentPlayer = (currentPlayer + 1) % players.count
         }
     }
 }

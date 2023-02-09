@@ -5,7 +5,7 @@
 import Foundation
 
 /// Initialisation errors
-enum InitialisationError: Error, Equatable {
+public enum InitialisationError: Error, Equatable {
     /// Unknown error
     case Unknown
     /// Too few rows
@@ -23,7 +23,7 @@ enum InitialisationError: Error, Equatable {
 }
 
 /// Playing errors
-enum PlayingError: Error, Equatable {
+public enum PlayingError: Error, Equatable {
     /// Unknown error
     case Unknown
     /// Out of bounds
@@ -32,14 +32,12 @@ enum PlayingError: Error, Equatable {
     case ColumnFull
     /// Column empty
     case ColumnEmpty
-    /// No column selected
-    case NoColumn
 }
 
 /// The game response
-enum GameResponse: Error, Equatable {
+public enum GameResponse: Error, Equatable {
     /// Equatable implementation
-    static func ==(lhs: GameResponse, rhs: GameResponse) -> Bool {
+    public static func ==(lhs: GameResponse, rhs: GameResponse) -> Bool {
         String(describing: lhs) == String(describing: rhs)
     }
 

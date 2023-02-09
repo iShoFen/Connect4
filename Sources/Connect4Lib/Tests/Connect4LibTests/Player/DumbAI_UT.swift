@@ -32,7 +32,7 @@ class DumbAI_UT: XCTestCase {
     }
 
     func testConvenienceInit() throws {
-        var dumbAI = DumbAI()
+        let dumbAI = DumbAI()
         XCTAssertEqual(0, dumbAI.id)
     }
 

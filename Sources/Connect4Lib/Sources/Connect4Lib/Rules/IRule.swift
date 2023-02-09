@@ -9,22 +9,21 @@ import Foundation
 public protocol IRule {
 
     /// The minimum number of rows.
-    var minRow: Int { get }
-
-    /// The maximum number of rows.
-    var maxRow: Int { get }
+    var row: Int { get }
 
     /// The minimum number of columns.
-    var minColumn: Int { get }
-
-    /// The maximum number of columns.
-    var maxColumn: Int { get }
+    var column: Int { get }
 
     /// The number of pieces to win.
     var nbPiecesToWin: Int { get }
 
     /// If diagonal wins are allowed.
     var isDiagonalWinAllowed: Bool { get }
+
+    /// Create a board.
+    ///
+    /// - Returns: A new board with the correct number of rows and columns.
+    func createBoard() -> Board
 
     /// Check if the board is valid.
     ///

@@ -47,19 +47,18 @@ public class DumbAI : Player {
         var myBoard = board
         let column = lastMove.column
         let columnOffset = Int.random(in: -1...1)
-        let playingId = myBoard.grid[column][lastMove.row] == 1 ? 2 : 1
 
         if column + columnOffset >= 0 && column + columnOffset < board.nbColumns {
-            let result = myBoard.insertPiece(by: playingId, atColumn: column + columnOffset)
-            if result != .failed(reason: .columnFull)
+            let result = myBoard.insertPiece(by: 0, atColumn: column + columnOffset)
+            if result != .Failed(reason: .ColumnFull)
             {
                 return column + columnOffset
             }
         }
 
         for i in 0..<myBoard.nbColumns {
-            let result = myBoard.insertPiece(by: playingId, atColumn: i)
-            if result != .failed(reason: .columnFull) {
+            let result = myBoard.insertPiece(by: 0, atColumn: i)
+            if result != .Failed(reason: .ColumnFull) {
                 return i
             }
         }

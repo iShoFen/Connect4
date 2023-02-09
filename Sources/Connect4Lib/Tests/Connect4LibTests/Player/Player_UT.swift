@@ -25,6 +25,38 @@ class Player_UT: XCTestCase {
         expect(initPlayerWithId: uint64.min, shouldBeNotNil: true)
     }
 
+    func testEquals() throws {
+        func expect(equalsPlayer player1: Player,
+                    andPlayer player2: Player,
+                    thatShouldBe equals: Bool) {
+            XCTAssertEqual(equals, player1 == player2)
+        }
+
+        let player1 = Player(withId: 1)!
+        let player2 = Player(withId: 1)!
+        expect(equalsPlayer: player1, andPlayer: player2, thatShouldBe: true)
+
+        let player3 = Player(withId: 2)!
+        let player4 = Player(withId: 1)!
+        expect(equalsPlayer: player3, andPlayer: player4, thatShouldBe: false)
+    }
+
+    public func testHash() throws {
+        func expect(hashPlayer1 player1: Player,
+                    andPlayer2 player2: Player,
+                    thatShouldBeEquals equals: Bool) {
+            XCTAssertEqual(equals, player1.hashValue == player2.hashValue)
+        }
+
+        let player1 = Player(withId: 1)!
+        let player2 = Player(withId: 1)!
+        expect(hashPlayer1: player1, andPlayer2: player2, thatShouldBeEquals: true)
+
+        let player3 = Player(withId: 2)!
+        let player4 = Player(withId: 1)!
+        expect(hashPlayer1: player3, andPlayer2: player4, thatShouldBeEquals: false)
+    }
+
     func testPlayOnColumn() throws {
         func expect(playOnBoard board: Board,
                     withLastMove lastMove: (Int, Int),
@@ -41,7 +73,6 @@ class Player_UT: XCTestCase {
         expect(playOnBoard: board, withLastMove: (0, 0), andThisRule: rule, andShouldReturn: nil)
         expect(playOnBoard: board, withLastMove: (5, 4), andThisRule: rule, andShouldReturn: nil)
 
-        // file the grid by 6 and 7 of nil
         let grid = [[nil, nil, nil, nil, nil, nil, nil],
                     [nil, nil, nil, nil, nil, nil, nil],
                     [2, nil, nil, nil, nil, nil, nil],

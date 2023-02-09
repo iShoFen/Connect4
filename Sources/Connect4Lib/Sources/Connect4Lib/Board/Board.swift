@@ -13,8 +13,9 @@ public struct Board : CustomStringConvertible, Equatable {
     public var description: String {
         var string = String()
         for row in grid.reversed() {
+            string.append("|")
             for cell in row {
-                string.append("\(Board.descriptionMapper[cell] ?? "-") ")
+                string.append("\(Board.descriptionMapper[cell] ?? "-")|")
             }
             string.append("\n")
         }

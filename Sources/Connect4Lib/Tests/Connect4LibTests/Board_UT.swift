@@ -57,7 +57,11 @@ final class Board_UT: XCTestCase {
     func testDescription() throws {
         let loadBoard = [[1,2,nil,nil], [1,2,3,nil], [3,2,3,2]]
         let board = Board(withGrid: loadBoard)!
-        let expectedDescription = "- O - O \nX O - - \nX O - - \n"
+        let expectedDescription = """
+                                  |-|O|-|O|
+                                  |X|O|-|-|
+                                  |X|O|-|-|\n
+                                  """
         XCTAssertEqual(expectedDescription, board.description)
     }
 

@@ -25,7 +25,7 @@ public class  Human : Player {
     public var score: UInt = 0
 
     /// The scanner to use.
-    private let scanner: () -> String
+    private let scanner: () -> Int
 
     /// Creates a new human player.
     ///
@@ -36,7 +36,7 @@ public class  Human : Player {
     ///   - scanner: The scanner to use.
     public init?(withId id: uint64,
                  andPseudo pseudo: String = "Player",
-                 andScanner scanner: @escaping () -> String) {
+                 andScanner scanner: @escaping () -> Int) {
         guard id > 0 else {
             return nil
         }
@@ -63,11 +63,7 @@ public class  Human : Player {
     /// - Note: Ask the player to enter a column.
     override public func playOnColumn(onBoard board: Board,
                               withLastMove lastMove: (row: Int, column: Int),
-                              withThisRule rule: IRule) -> Int? {
-        guard let column = Int(scanner()) else {
-            return nil
-        }
-
-        return column
+                              withThisRule rule: IRule) -> Int {
+        scanner()
     }
 }

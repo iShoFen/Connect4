@@ -19,44 +19,44 @@ public struct StandardRule : IRule {
 
     public func isValid(board: Board) -> RuleResult {
         guard board.nbRows >= row else {
-            return .invalid(reason: .TooFewRows)
+            return .Invalid(reason: .TooFewRows)
         }
 
         guard board.nbRows <= row else {
-            return .invalid(reason: .TooManyRows)
+            return .Invalid(reason: .TooManyRows)
         }
 
         guard board.nbColumns >= column  else {
-            return .invalid(reason: .TooFewColumns)
+            return .Invalid(reason: .TooFewColumns)
         }
 
         guard board.nbColumns <= column else {
-            return .invalid(reason: .TooManyColumns)
+            return .Invalid(reason: .TooManyColumns)
         }
 
-        return .valid
+        return .Valid
     }
 
     public func isGameOver(onBoard board: Board, withLastMove lastMove: (row: Int, column: Int)) -> RuleResult {
         let validity = isValid(board: board)
-        guard validity == .valid else {
+        guard validity == .Valid else {
             return validity
         }
 
         guard board.grid[lastMove.row][lastMove.column] != nil else {
-            return .invalid(reason: .EmptyLastMove)
+            return .Invalid(reason: .EmptyLastMove)
         }
 
         let winingIndexes = isWin(onBoard: board, withLastMove: lastMove)
         if let winingIndexes {
-            return .won(id: board.grid[lastMove.row][lastMove.column]!, at: winingIndexes)
+            return .Won(id: board.grid[lastMove.row][lastMove.column]!, at: winingIndexes)
         }
 
         guard !board.isFull() else {
-            return .notWon(reason: .BoardFull)
+            return .NotWon(reason: .BoardFull)
         }
 
-        return .notWon(reason: .NoWinner)
+        return .NotWon(reason: .NoWinner)
     }
 
     /// Check if the last move won the game.

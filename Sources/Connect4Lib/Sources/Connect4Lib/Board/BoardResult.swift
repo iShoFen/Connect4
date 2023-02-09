@@ -7,15 +7,26 @@
 
 import Foundation
 
+/// The reason why a board failed to delete a token.
 public enum FailedReason {
-    case outOfBounds
-    case columnFull
-    case columnEmpty
+    /// Unknown reason.
+    case Unknown
+    /// The column is out of bounds.
+    case OutOfBounds
+    /// The column is full.
+    case ColumnFull
+    /// The column is empty.
+    case ColumnEmpty
 }
 
+/// The result of a board.
 public enum BoardResult: Equatable {
-    case unknown
-    case added(id: Int, row: Int, column: Int)
-    case deleted(id: Int, row: Int, column: Int)
-    case failed(reason: FailedReason)
+    /// Unknown result.
+    case Unknown
+    /// The token was added.
+    case Added(id: Int, row: Int, column: Int)
+    /// The token was deleted.
+    case Deleted(id: Int, row: Int, column: Int)
+    /// The board failed to add or delete a token.
+    case Failed(reason: FailedReason)
 }

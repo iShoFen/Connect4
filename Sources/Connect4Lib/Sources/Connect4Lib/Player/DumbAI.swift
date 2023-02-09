@@ -51,7 +51,7 @@ public class DumbAI : Player {
 
         if column + columnOffset >= 0 && column + columnOffset < board.nbColumns {
             let result = myBoard.insertPiece(by: playingId, atColumn: column + columnOffset)
-            if result != .failed(reason: .columnFull)
+            if result != .Failed(reason: .ColumnFull)
             {
                 return column + columnOffset
             }
@@ -59,7 +59,7 @@ public class DumbAI : Player {
 
         for i in 0..<myBoard.nbColumns {
             let result = myBoard.insertPiece(by: playingId, atColumn: i)
-            if result != .failed(reason: .columnFull) {
+            if result != .Failed(reason: .ColumnFull) {
                 return i
             }
         }

@@ -6,6 +6,8 @@ import Foundation
 
 /// The reason why a board is invalid.
 public enum InvalidReason {
+    /// Unknown reason.
+    case Unknown
     /// The board has too many rows.
     case TooManyRows
     /// The board has too few rows.
@@ -35,13 +37,13 @@ public enum RuleResult : Equatable {
     }
 
     /// Unknown result.
-    case unknown
+    case Unknown
     /// The rule is not applicable.
-    case invalid(reason: InvalidReason)
+    case Invalid(reason: InvalidReason)
     /// The rule is applicable
-    case valid
+    case Valid
     /// The rule is applicable and the game is not over (the player did not win) or the game is over (board is full).
-    case notWon(reason: InvalidReason)
+    case NotWon(reason: InvalidReason)
     /// The rule is applicable and the game is over (the player won).
-    case won(id: Int, at: [(Int, Int)])
+    case Won(id: Int, at: [(Int, Int)])
 }

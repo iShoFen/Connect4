@@ -14,17 +14,17 @@ print("Hello, World!")
 func insertPiece(by id: Int, atColumn column: Int, in b: inout Board) {
     let result = b.insertPiece(by: 2, atColumn: column)
     switch result {
-    case let .added(id, row, column):
+    case let .Added(id, row, column):
         print("player \(id) has inserted a Piece at column \(column) and row \(row)")
-    case let .deleted(id, row, column):
+    case let .Deleted(id, row, column):
         print("player \(id) has deleted a Piece at column \(column) and row \(row)")
-    case let .failed(reason):
+    case let .Failed(reason):
         switch reason {
-        case .columnEmpty:
+        case .ColumnEmpty:
             print("column \(column) is empty")
-        case .columnFull:
+        case .ColumnFull:
             print("column \(column) is full")
-        case .outOfBounds:
+        case .OutOfBounds:
             print("column \(column) is out of bounds")
         }
     
@@ -37,13 +37,13 @@ func insertPiece(by id: Int, atColumn column: Int, in b: inout Board) {
 func removePiece(atColumn column: Int, in b: inout Board) {
     let result = b.removePiece(atColumn: column)
     switch result {
-    case let .deleted(id, row, column):
+    case let .Deleted(id, row, column):
         print("admin has deleted a Piece from user \(id) at column \(column) and row \(row)")
-    case let .failed(reason):
+    case let .Failed(reason):
         switch reason {
-        case .columnEmpty:
+        case .ColumnEmpty:
             print("column \(column) is empty")
-        case .outOfBounds:
+        case .OutOfBounds:
             print("column \(column) is out of bounds")
         default:
             print("I don't know what is the error")

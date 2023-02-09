@@ -74,15 +74,15 @@ public struct Board : CustomStringConvertible, Equatable {
     }
     
     public mutating func insertPiece(by id: Int, atColumn column: Int) -> BoardResult {
-        guard column >= 0 && column < nbColumns else { return .failed(reason: .outOfBounds) }
+        guard column >= 0 && column < nbColumns else { return .Failed(reason: .OutOfBounds) }
         
         for row in 0..<nbRows {
             if insertPiece(by: id, atRow: row, andAtColumn: column) {
-                return .added(id: id, row: row + 1, column: column + 1)
+                return .Added(id: id, row: row + 1, column: column + 1)
             }
         }
         
-        return .failed(reason: .columnFull)
+        return .Failed(reason: .ColumnFull)
     }
     
     private mutating func removePiece(atRow row: Int, andAtColumn column: Int) -> (id : Int?, isDeleted: Bool) {
@@ -98,17 +98,17 @@ public struct Board : CustomStringConvertible, Equatable {
     
     public mutating func removePiece(atColumn column: Int) -> BoardResult {
         guard column >= 0 && column < nbColumns else {
-            return .failed(reason: .outOfBounds)
+            return .Failed(reason: .OutOfBounds)
         }
         
         for row in (0..<nbRows).reversed() {
             let (id, isDeleted) = removePiece(atRow: row, andAtColumn: column)
             if isDeleted {
-                return .deleted(id: id!, row: row + 1, column: column + 1)
+                return .Deleted(id: id!, row: row + 1, column: column + 1)
             }
         }
 
-        return .failed(reason: .columnEmpty)
+        return .Failed(reason: .ColumnEmpty)
     }
     
     public func isFull() -> Bool {

@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game_UT.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/GameResponseExtension.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/BoardResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/BoardResult.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/Game.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/RuleResult.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board/Board_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game_UT.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/StandardRule_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Rules/StandardRule_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,10 +81,14 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Rules" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game" />
       <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board" />
     </key>
   </component>
-  <component name="RunManager" selected="Swift Package Test.Game_UT.testResetGame">
+  <component name="RunManager" selected="Swift Package Test.Connect4LibTests">
     <configuration name="Connect4App" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4App" TARGET_NAME="Connect4App" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="Connect4App" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Connect4App" RUN_TARGET_NAME="Connect4App" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -136,9 +151,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Swift Package Test.Game_UT.testInitWithBoard" />
         <item itemvalue="Swift Package Test.Game_UT.testResetGame" />
         <item itemvalue="Swift Package Test.Game_UT" />
-        <item itemvalue="Swift Package Test.Game_UT.testInitWithBoard" />
         <item itemvalue="Swift Package Test.DumbAI_UT.testPlay" />
         <item itemvalue="Swift Package Test.Human_UT.testHash" />
       </list>
@@ -156,10 +171,23 @@
       <workItem from="1675851057779" duration="4667000" />
       <workItem from="1675891187666" duration="1063000" />
       <workItem from="1675892281911" duration="1761000" />
+      <workItem from="1675934068824" duration="5023000" />
+      <workItem from="1675940055348" duration="7822000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift</url>
+          <line>42</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

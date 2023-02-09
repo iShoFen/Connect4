@@ -40,7 +40,7 @@ public enum RuleResult : Equatable {
     case invalid(reason: InvalidReason)
     /// The rule is applicable
     case valid
-    /// The rule is applicable and the game is not over.
+    /// The rule is applicable and the game is not over (the player did not win) or the game is over (board is full).
     case notWon(reason: InvalidReason)
     /// The rule is applicable and the game is over (the player won).
     case won(id: Int, at: [(Int, Int)])

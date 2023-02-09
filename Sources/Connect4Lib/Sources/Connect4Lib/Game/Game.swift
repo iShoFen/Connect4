@@ -23,7 +23,7 @@ struct Game {
     private var lastMove: (row: Int, column: Int) = (-1, -1)
 
     /// The display function
-    private let display: (String) -> Void
+    private let display: (GameResponse) -> Void
 
     /// Create a game with a board, a rule, players and a display function
     ///
@@ -32,13 +32,21 @@ struct Game {
     ///   - rule: The rule of the game
     ///   - players: The players of the game
     ///   - display: The display function
-    public init?(withBoard board: Board, andRule rule: IRule, withPlayers players: [Player], andDisplay display: @escaping (String) -> Void) {
-        guard (rule.isValid(board: board) == .valid) else {
-            return nil
+    public init(withBoard board: Board,
+                andRule rule: IRule,
+                withPlayers players: [Player],
+                andDisplay display: @escaping (GameResponse) -> Void)
+    throws {
+        let result = rule.isValid(board: board)
+        guard result == .Valid else {
+            let someReason: InvalidReason = .Unknown
+            precondition(result == .Invalid(reason: someReason))
+            throw GameResponse.FailedInit(reason: someReason.toInitError())
         }
 
+
         guard (players.count > 1) else {
-            return nil
+            throw GameResponse.FailedInit(reason: .NotEnoughPlayers(expected: 2, actual: players.count))
         }
 
         self.players = Dictionary(uniqueKeysWithValues: players.enumerated().map { ($1, $0 + 1) })
@@ -55,8 +63,8 @@ struct Game {
     ///   - rule: The rule of the game
     ///   - players: The players of the game
     ///   - display: The display function
-    public init?(withRule rule: IRule, andPlayers players: [Player], withDisplay display: @escaping (String) -> Void) {
-        self.init(withBoard: rule.createBoard(), andRule: rule, withPlayers: players, andDisplay: display)
+    public init(withRule rule: IRule, andPlayers players: [Player], withDisplay display: @escaping (GameResponse) -> Void) throws {
+        try self.init(withBoard: rule.createBoard(), andRule: rule, withPlayers: players, andDisplay: display)
     }
 
     /// Reset the game
@@ -76,7 +84,7 @@ struct Game {
             if let column {
                 validMove = validateMove(onColumn: column)
             } else {
-                display("No column selected")
+                display(.FailedPlays(reason: .NoColumn))
             }
 
         } while !validMove
@@ -89,13 +97,13 @@ struct Game {
     private mutating func validateMove(onColumn column: Int) -> Bool {
         let result = board.insertPiece(by: players[currentPlayer]!, atColumn: column)
         switch result {
-            case let .added(id, row, column):
+            case let .Added(id, row, column):
                 lastMove = (row, column)
-                display("Piece \(id) added at row \(row) and column \(column)")
+                display(.Added(id: id, row: row, column: column))
                 return true
-            case let .failed(reason):
-                display("Failed to add piece: \(reason)")
-            default: break
+            case let .Failed(reason):
+                display(.FailedPlays(reason: reason.toPlayingError()))
+            default: preconditionFailure("Unexpected result")
         }
 
         return false
@@ -107,13 +115,12 @@ struct Game {
     /// - Returns: True if the game is over, false otherwise
     private func validateGameState(withResult result: RuleResult) -> Bool {
         switch result {
-            case let .won(player, winingIndexes):
-                display("Player \(player + 1) won")
-                display("Wining indexes: \(winingIndexes)")
+            case let .Won(player, winingIndexes):
+                display(.Win(id: player, at: winingIndexes))
                 return true
-            case let .notWon(reason):
+            case let .NotWon(reason):
                 if reason == .BoardFull {
-                    display("Board full, party is over")
+                    display(.NoWinner)
                     return true
                 }
             default: break
@@ -128,8 +135,8 @@ struct Game {
     public mutating func start() {
         var isOver = false
         while !isOver {
-            display(board.description)
-            display("Player \(players[currentPlayer]!) turn")
+            display(.Show(board: board.grid))
+            display(.PlayerTurn(id: players[currentPlayer]!))
             play()
             let result = rule.isGameOver(onBoard: board, withLastMove: lastMove)
             isOver = validateGameState(withResult: result)

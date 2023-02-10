@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Connect4App/Connect4App/ConsoleUtils/ConsoleReader.swift" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Connect4App/Connect4App/ConsoleUtils/ConsoleWriter.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board/Board.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/Game.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/Game.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/GameResponse.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game/GameResponse.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board/Board_UT.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App.xcodeproj/project.pbxproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,16 +59,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;coverage&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "OBJC.PRESERVED_TARGET_SELECTION": "Connect4App",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "cidr.known.project.marker": "true",
+    "settings.editor.selected.configurable": "coverage"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game" />
@@ -165,7 +163,7 @@
       <workItem from="1675891187666" duration="1063000" />
       <workItem from="1675892281911" duration="1761000" />
       <workItem from="1675934068824" duration="5023000" />
-      <workItem from="1675940055348" duration="21964000" />
+      <workItem from="1675940055348" duration="24159000" />
     </task>
     <servers />
   </component>

@@ -33,6 +33,15 @@ public struct ConsoleWriter {
         print(string)
     }
 
+    private func writeTupleArray(_ tuple: [(Int, Int)]) {
+        var string = String()
+        for (row, column) in tuple {
+            string.append("(\(row + 1), \(column + 1))")
+        }
+
+        print(string)
+    }
+
     private func writeInitError(_ error: InitialisationError) {
         switch error {
         case .TooFewRows:
@@ -72,7 +81,7 @@ public struct ConsoleWriter {
         case .FailedPlays(let reason):
             writePlayingError(reason)
         case .Added(let id, let row, let column):
-            print("Player \(id) added a token at (\(row), \(column))")
+            print("Player \(id) added a token at (\(row + 1), \(column + 1))")
         case .Show(let board):
             writeGrid(board)
         case .PlayerTurn(let id):

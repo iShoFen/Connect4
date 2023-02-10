@@ -13,6 +13,8 @@ public struct StandardRule : IRule {
 
     public let isDiagonalWinAllowed: Bool = true
 
+    public init() {}
+
     public func createBoard() -> Board {
         Board(withNbRows: row, andNbColumns: column)!
     }

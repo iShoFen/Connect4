@@ -52,9 +52,9 @@ package Connect4Lib {
     }
 
     Game --> Board
-    Game --> " *  " Player 
+    Game -right->" *  " Player : "                                   "
     Game --> IRules
-    Game ..> GameResponse
+    Game .left.> GameResponse : "                    "
 
     GameResponse ..> PlayingError
     GameResponse ..> InitialisationError
@@ -62,12 +62,14 @@ package Connect4Lib {
     Board ..> BoardResult
     BoardResult ..> FailedReason
 
-    IRules ..> RulesResult
+    IRules .right.> RulesResult
     RulesResult ..> InvalidReason
     IRules <|-- StandardRules
 
     Player <|-- Human
     Player <|-- DumbAI
+    Player ..> Board
+    Player ..> IRules
 }
 
 package Connect4App {
@@ -83,7 +85,7 @@ package Connect4App {
     main --> ConsoleReader
     main --> ConsoleWriter
     main ----> Game
-    main --> "*" Player
+    main --> " *  " Player
 }
 
 package Connect4LibTests{} 

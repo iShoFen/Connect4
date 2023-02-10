@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C182F32D08DFC1834BD31CBA /* ConsoleReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182F294FC0DC5638D2EBA5B /* ConsoleReader.swift */; };
+		C182F7521C9ECD8CF7546858 /* ConsoleWriter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C182F08586938953C819105B /* ConsoleWriter.swift */; };
 		EC84244C297C795300865D58 /* Connect4Lib in Frameworks */ = {isa = PBXBuildFile; productRef = EC84244B297C795300865D58 /* Connect4Lib */; };
 		EC975AB52976882A0072120A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC975AB42976882A0072120A /* main.swift */; };
 /* End PBXBuildFile section */
@@ -24,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		C182F08586938953C819105B /* ConsoleWriter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleWriter.swift; sourceTree = "<group>"; };
+		C182F294FC0DC5638D2EBA5B /* ConsoleReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConsoleReader.swift; sourceTree = "<group>"; };
 		EC975AB12976882A0072120A /* Connect4App */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Connect4App; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC975AB42976882A0072120A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -40,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C182FB3ECA8ED1C2D4486D10 /* ConsoleUtils */ = {
+			isa = PBXGroup;
+			children = (
+				C182F294FC0DC5638D2EBA5B /* ConsoleReader.swift */,
+				C182F08586938953C819105B /* ConsoleWriter.swift */,
+			);
+			path = ConsoleUtils;
+			sourceTree = "<group>";
+		};
 		EC7388E52979739D00386323 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				EC975AB42976882A0072120A /* main.swift */,
+				C182FB3ECA8ED1C2D4486D10 /* ConsoleUtils */,
 			);
 			path = Connect4App;
 			sourceTree = "<group>";
@@ -134,6 +148,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC975AB52976882A0072120A /* main.swift in Sources */,
+				C182F32D08DFC1834BD31CBA /* ConsoleReader.swift in Sources */,
+				C182F7521C9ECD8CF7546858 /* ConsoleWriter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

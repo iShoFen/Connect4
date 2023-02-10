@@ -10,12 +10,14 @@ steps:
   - name: build
     image: swift:latest
     commands:
-      - cd Sources/HelloLibrary
+      - cd Sources/Connect4Lib 
+      - swift build
+      - cd Sources/Connect4App
       - swift build
 
-  - name: tests_Model
+  - name: tests
     image: swift:latest
     commands:
-      - cd Sources/HelloLibrary
+      - cd Sources/Connect4Lib 
       - swift test
     depends_on: [build]

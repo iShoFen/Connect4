@@ -14,7 +14,7 @@ public class DumbAI : Player {
     /// - Returns: A new AI player.
     ///
     /// - Note: The id must be 0, prefer using the `init()` CI instead.
-    public override init?(withId id: uint64) {
+    public override init?(withId id: UInt64) {
         guard id == 0 else {
             return nil
         }

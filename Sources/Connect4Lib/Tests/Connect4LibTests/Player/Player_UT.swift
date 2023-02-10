@@ -7,7 +7,7 @@ import XCTest
 
 class Player_UT: XCTestCase {
     func testInit() throws {
-        func expect(initPlayerWithId id: uint64, shouldBeNotNil notNil: Bool) {
+        func expect(initPlayerWithId id: UInt64, shouldBeNotNil notNil: Bool) {
             let player = Player(withId: id)
 
             if !notNil {
@@ -20,9 +20,9 @@ class Player_UT: XCTestCase {
         }
 
         expect(initPlayerWithId: 1, shouldBeNotNil: true)
-        expect(initPlayerWithId: uint64.max, shouldBeNotNil: true)
+        expect(initPlayerWithId: UInt64.max, shouldBeNotNil: true)
         expect(initPlayerWithId: 0, shouldBeNotNil: true)
-        expect(initPlayerWithId: uint64.min, shouldBeNotNil: true)
+        expect(initPlayerWithId: UInt64.min, shouldBeNotNil: true)
     }
 
     func testEquals() throws {

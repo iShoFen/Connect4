@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/ConsoleUtils/ConsoleWriter.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/ConsoleUtils/ConsoleWriter.swift" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Rules/StandardRule.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +32,10 @@
             <RecentBranchesForRepo>
               <option name="branches">
                 <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/app-loop/6" />
+                    <option name="lastUsedInstant" value="1675995115" />
+                  </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="feature/cli-utils/5" />
                     <option name="lastUsedInstant" value="1675991047" />
@@ -83,7 +90,7 @@
       <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Connect4App">
+  <component name="RunManager" selected="Swift Package Test.Connect4LibTests">
     <configuration name="Connect4App" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4App" TARGET_NAME="Connect4App" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="Connect4App" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Connect4App" RUN_TARGET_NAME="Connect4App" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
@@ -167,7 +174,7 @@
       <workItem from="1675891187666" duration="1063000" />
       <workItem from="1675892281911" duration="1761000" />
       <workItem from="1675934068824" duration="5023000" />
-      <workItem from="1675940055348" duration="28012000" />
+      <workItem from="1675940055348" duration="28660000" />
     </task>
     <servers />
   </component>

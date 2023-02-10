@@ -7,7 +7,7 @@ import XCTest
 
 class DumbAI_UT: XCTestCase {
     func testInit() throws {
-        func expect(initDumbAIWithId id: uint64?, andShouldNotBeNull notNull: Bool) {
+        func expect(initDumbAIWithId id: UInt64?, andShouldNotBeNull notNull: Bool) {
             let dumbAI: DumbAI?
             if let id = id {
                 dumbAI = DumbAI(withId: id)
@@ -26,8 +26,8 @@ class DumbAI_UT: XCTestCase {
 
         expect(initDumbAIWithId: 0, andShouldNotBeNull: true)
         expect(initDumbAIWithId: 1, andShouldNotBeNull: false)
-        expect(initDumbAIWithId: uint64.min, andShouldNotBeNull: true)
-        expect(initDumbAIWithId: uint64.max, andShouldNotBeNull: false)
+        expect(initDumbAIWithId: UInt64.min, andShouldNotBeNull: true)
+        expect(initDumbAIWithId: UInt64.max, andShouldNotBeNull: false)
         expect(initDumbAIWithId: nil, andShouldNotBeNull: true)
     }
 

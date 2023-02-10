@@ -34,7 +34,7 @@ public class  Human : Player {
     ///   - playingId: The player's playing id.
     ///   - pseudo: The player's pseudo.
     ///   - scanner: The scanner to use.
-    public init?(withId id: uint64,
+    public init?(withId id: UInt64,
                  andPseudo pseudo: String = "Player",
                  andScanner scanner: @escaping () -> Int) {
         guard id > 0 else {

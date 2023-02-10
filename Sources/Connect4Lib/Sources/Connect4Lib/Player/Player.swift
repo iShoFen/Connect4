@@ -7,7 +7,7 @@ import Foundation
 /// A player that can play on a board.
 public class Player: Equatable, Hashable {
     /// The player's id.
-    public let id: uint64
+    public let id: UInt64
 
     /// Compares two players.
     ///
@@ -33,7 +33,7 @@ public class Player: Equatable, Hashable {
     ///   - playingId: The player's playing id.
     ///
     /// - Returns: A new player.
-    public init?(withId id: uint64) {
+    public init?(withId id: UInt64) {
         self.id = id
     }
 

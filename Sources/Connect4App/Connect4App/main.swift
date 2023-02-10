@@ -35,7 +35,7 @@ while true {
     for i in 1...numberOfPlayers {
         writer.write("Please enter the name of player \(i):")
         let name = reader.stringReader()
-        players.append(Human(withId: uint64(i), andPseudo: name, andScanner: playerScanner)!)
+        players.append(Human(withId: UInt64(i), andPseudo: name, andScanner: playerScanner)!)
     }
 
     if numberOfPlayers == 1 {

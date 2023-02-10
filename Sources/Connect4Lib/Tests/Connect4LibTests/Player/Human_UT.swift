@@ -7,7 +7,7 @@ import XCTest
 
 class Human_UT: XCTestCase {
     func testInit() throws {
-        func expect(initHumanWithId id:uint64,
+        func expect(initHumanWithId id:UInt64,
                     andName name: String?,
                     andScanner scanner: @escaping () -> Int,
                     thatShouldBeNotNil notNil: Bool) {
@@ -34,8 +34,8 @@ class Human_UT: XCTestCase {
         expect(initHumanWithId: 1, andName: "", andScanner: { 1 }, thatShouldBeNotNil: false)
         expect(initHumanWithId: 1, andName: " ", andScanner: { 1 }, thatShouldBeNotNil: false)
         expect(initHumanWithId: 0, andName: nil, andScanner: { 1 }, thatShouldBeNotNil: false)
-        expect(initHumanWithId: uint64.min, andName: nil, andScanner: { 1 }, thatShouldBeNotNil: false)
-        expect(initHumanWithId: uint64.max, andName: nil, andScanner: { 1 }, thatShouldBeNotNil: true)
+        expect(initHumanWithId: UInt64.min, andName: nil, andScanner: { 1 }, thatShouldBeNotNil: false)
+        expect(initHumanWithId: UInt64.max, andName: nil, andScanner: { 1 }, thatShouldBeNotNil: true)
     }
 
     func testGetSetName() throws {

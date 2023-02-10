@@ -32,10 +32,19 @@ while true {
         continue
     }
 
-    for i in 1...numberOfPlayers {
-        writer.write("Please enter the name of player \(i):")
-        let name = reader.stringReader()
-        players.append(Human(withId: UInt64(i), andPseudo: name, andScanner: playerScanner)!)
+    if (players.count == 2 && numberOfPlayers == 1) {
+        writer.write("Who's players are you ? (1 or 2)")
+        guard let playerNumber = reader.intReader(), playerNumber == 1 || playerNumber == 2 else {
+            writer.write("Invalid player number")
+            continue
+        }
+        players.remove(at: playerNumber == 1 ? 0 : 1)
+    } else if (players.count < numberOfPlayers) {
+        for i in (1 + players.count)...numberOfPlayers {
+            writer.write("Please enter the name of player \(i):")
+            let name = reader.stringReader()
+            players.append(Human(withId: UInt64(i), andPseudo: name, andScanner: playerScanner)!)
+        }
     }
 
     if numberOfPlayers == 1 {
@@ -43,12 +52,14 @@ while true {
     }
     do {
         game = try Game(withRule: rules, andPlayers: players, withDisplay: {writer.writeGameResponse($0)})
+        
         game!.start()
         writer.write("Do you want to play again? (y/n)")
         let answer = reader.stringReader()
         guard answer == "y" else {
             break
         }
+        players.removeAll(where: {$0 is DumbAI})
     } catch let error as GameResponse {
         writer.writeGameResponse(error)
     } catch {

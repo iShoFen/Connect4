@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12a95a35-a8cb-481f-b36d-a626088c058a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4App/Connect4App/main.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/DumbAI.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Human.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Player/Player.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/DumbAI_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Human_UT.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" beforeDir="false" afterPath="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Player/Player_UT.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,44 +24,118 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/app-loop/6" />
+                    <option name="lastUsedInstant" value="1675995115" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/cli-utils/5" />
+                    <option name="lastUsedInstant" value="1675991047" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="develop" />
+                    <option name="lastUsedInstant" value="1675990885" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="feature/game/3" />
+                    <option name="lastUsedInstant" value="1675895767" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectApplicationVersion">
     <option name="ide" value="AppCode" />
     <option name="majorVersion" value="2022" />
-    <option name="minorVersion" value="3.1" />
+    <option name="minorVersion" value="3.2" />
   </component>
-  <component name="ProjectId" id="2KeOYy0aJdI3EmHTfpyimWjRdPZ" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="2L9MZEkooEveSJeR00LWydZaBtN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "cidr.known.project.marker": "true",
-    "last_opened_file_path": "/Users/etudiant/Documents/IUT/3A/Swift/Connect4/Sources/Connect4.xcworkspace",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;OBJC.PRESERVED_TARGET_SELECTION&quot;: &quot;Connect4App&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;coverage&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Application.Connect4App">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Rules" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Board" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Game" />
+      <recent name="$PROJECT_DIR$/Connect4Lib/Sources/Connect4Lib/Board" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Swift Package Test.Connect4LibTests">
+    <configuration name="Connect4App" type="AppleRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4App" TARGET_NAME="Connect4App" CONFIG_NAME="Debug" IS_LOCATION_SIMULATION_SUPPORTED="false" SCHEME_NAME="Connect4App" IS_LOCATION_SIMULATION_ALLOWED="true" APPLICATION_LANGUAGE="IDELaunchSchemeLanguageUseSystemLanguage" APPLICATION_REGION="" RUN_TARGET_PROJECT_NAME="Connect4App" RUN_TARGET_NAME="Connect4App" MAKE_ACTIVE="TRUE" SHOULD_DEBUG_EXTENSIONS="false">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+      <embedded_app_extension_list />
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Connect4Lib" type="SwiftPackageManagerRunConfiguration" factoryName="Swift Package Run" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4Lib" CONFIG_NAME="Connect4Lib">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Board_UT" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Board_UT" TEST_MODE="SUITE_TEST">
+    <configuration name="Connect4LibTests" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Connect4LibTests" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_MODE="SUITE_TEST">
+    <configuration name="GameResponseExtensions_UT.testFailedReasonExtensions" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="GameResponseExtensions_UT" TEST_METHOD="testFailedReasonExtensions" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameResponseExtensions_UT.testInvalidReasonExtensions" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="GameResponseExtensions_UT" TEST_METHOD="testInvalidReasonExtensions" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game_UT.testInitWithBoard" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Game_UT" TEST_METHOD="testInitWithBoard" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game_UT.testStart" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Game_UT" TEST_METHOD="testStart" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Game_UT.testStartOutOfBounds" type="SwiftPackageManagerTestRunConfiguration" factoryName="Swift Package Test" temporary="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Connect4" TARGET_NAME="Connect4LibTests" CONFIG_NAME="Connect4LibTests" RUN_TARGET_PROJECT_NAME="Connect4" RUN_TARGET_NAME="Connect4LibTests" TEST_CLASS="Game_UT" TEST_METHOD="testStartOutOfBounds" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="SPM.BUILD_TASK_PROVIDER" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -69,35 +145,56 @@
       <item itemvalue="Application.Connect4App" />
       <item itemvalue="Swift Package Run.Connect4Lib" />
       <item itemvalue="Swift Package Test.Connect4LibTests" />
-      <item itemvalue="Swift Package Test.Board_UT" />
+      <item itemvalue="Swift Package Test.GameResponseExtensions_UT.testFailedReasonExtensions" />
+      <item itemvalue="Swift Package Test.GameResponseExtensions_UT.testInvalidReasonExtensions" />
+      <item itemvalue="Swift Package Test.Game_UT.testStart" />
+      <item itemvalue="Swift Package Test.Game_UT.testStartOutOfBounds" />
+      <item itemvalue="Swift Package Test.Game_UT.testInitWithBoard" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Swift Package Test.Board_UT" />
+        <item itemvalue="Swift Package Test.Game_UT.testStart" />
+        <item itemvalue="Swift Package Test.Game_UT.testStartOutOfBounds" />
+        <item itemvalue="Swift Package Test.GameResponseExtensions_UT.testInvalidReasonExtensions" />
+        <item itemvalue="Swift Package Test.GameResponseExtensions_UT.testFailedReasonExtensions" />
+        <item itemvalue="Swift Package Test.Game_UT.testInitWithBoard" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="12a95a35-a8cb-481f-b36d-a626088c058a" name="Changes" comment="" />
-      <created>1674331632521</created>
+      <changelist id="a61d3fd2-dc5a-4c4f-b2f7-6033aab9f76d" name="Changes" comment="" />
+      <created>1675278902839</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1674331632521</updated>
-      <workItem from="1674331633542" duration="194000" />
-      <workItem from="1674331830405" duration="78000" />
-      <workItem from="1674331943993" duration="410000" />
-      <workItem from="1674333798635" duration="9580000" />
+      <updated>1675278902839</updated>
+      <workItem from="1675278903990" duration="6420000" />
+      <workItem from="1675851057779" duration="4667000" />
+      <workItem from="1675891187666" duration="1063000" />
+      <workItem from="1675892281911" duration="1761000" />
+      <workItem from="1675934068824" duration="5023000" />
+      <workItem from="1675940055348" duration="28660000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$" />
-    </ignored-roots>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift</url>
+          <line>264</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Connect4Lib/Tests/Connect4LibTests/Game/Game_UT.swift</url>
+          <line>249</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

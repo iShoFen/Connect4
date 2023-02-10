@@ -7,15 +7,15 @@
 
 import Foundation
 
-public struct Board : CustomStringConvertible {
-    
+public struct Board : CustomStringConvertible, Equatable {
     private static let descriptionMapper: [Int?:String] = [nil:"-", 1:"X", 2:"O"]
     
     public var description: String {
         var string = String()
-        for row in _grid.reversed() {
+        for row in grid.reversed() {
+            string.append("|")
             for cell in row {
-                string.append("\(Board.descriptionMapper[cell] ?? "-") ")
+                string.append("\(Board.descriptionMapper[cell] ?? "-")|")
             }
             string.append("\n")
         }
@@ -27,9 +27,17 @@ public struct Board : CustomStringConvertible {
 
     public let nbColumns: Int
     
-    var _grid: [[Int?]]
+    public private(set) var grid: [[Int?]]
 
-    public var grid: [[Int?]] { _grid }
+    public static func == (lhs: Board, rhs: Board) -> Bool {
+        lhs.nbRows == rhs.nbRows
+                && lhs.nbColumns == rhs.nbColumns
+                && lhs.grid.enumerated().allSatisfy { (rowIndex, row) in
+                    row.enumerated().allSatisfy { (columnIndex, cell) in
+                        cell == rhs.grid[rowIndex][columnIndex]
+                    }
+                }
+    }
     
     public init?(withNbRows nbRows: Int = 6, andNbColumns nbColumns: Int = 7) {
         guard nbRows > 0 && nbColumns > 0 else {
@@ -38,7 +46,7 @@ public struct Board : CustomStringConvertible {
         
         self.nbRows = nbRows
         self.nbColumns = nbColumns
-        _grid = Array(repeating: Array(repeating: nil, count: nbColumns), count: nbRows)
+        grid = Array(repeating: Array(repeating: nil, count: nbColumns), count: nbRows)
     }
     
     public init?(withGrid grid: [[Int?]]) {
@@ -52,59 +60,59 @@ public struct Board : CustomStringConvertible {
         
         nbRows = grid.count
         nbColumns = grid[0].count
-        _grid = grid
+        self.grid = grid
     }
 
     private mutating func insertPiece(by id: Int, atRow row: Int, andAtColumn column: Int) -> Bool {
-        guard _grid[row][column] == nil else {
+        guard grid[row][column] == nil else {
             return false
         }
         
-        _grid[row][column] = id
+        grid[row][column] = id
         
         return true
     }
     
     public mutating func insertPiece(by id: Int, atColumn column: Int) -> BoardResult {
-        guard column >= 0 && column < nbColumns else { return .failed(reason: .outOfBounds) }
+        guard column >= 0 && column < nbColumns else { return .Failed(reason: .OutOfBounds) }
         
         for row in 0..<nbRows {
             if insertPiece(by: id, atRow: row, andAtColumn: column) {
-                return .added(id: id, row: row + 1, column: column + 1)
+                return .Added(id: id, row: row, column: column)
             }
         }
         
-        return .failed(reason: .columnFull)
+        return .Failed(reason: .ColumnFull)
     }
     
     private mutating func removePiece(atRow row: Int, andAtColumn column: Int) -> (id : Int?, isDeleted: Bool) {
-        guard _grid[row][column] != nil else {
+        guard grid[row][column] != nil else {
             return (nil, false)
         }
 
-        let id = _grid[row][column]
-        _grid[row][column] = nil
+        let id = grid[row][column]
+        grid[row][column] = nil
 
         return (id, true)
     }
     
     public mutating func removePiece(atColumn column: Int) -> BoardResult {
         guard column >= 0 && column < nbColumns else {
-            return .failed(reason: .outOfBounds)
+            return .Failed(reason: .OutOfBounds)
         }
         
         for row in (0..<nbRows).reversed() {
             let (id, isDeleted) = removePiece(atRow: row, andAtColumn: column)
             if isDeleted {
-                return .deleted(id: id!, row: row + 1, column: column + 1)
+                return .Deleted(id: id!, row: row, column: column)
             }
         }
 
-        return .failed(reason: .columnEmpty)
+        return .Failed(reason: .ColumnEmpty)
     }
     
     public func isFull() -> Bool {
-        _grid.allSatisfy {
+        grid.allSatisfy {
             $0.allSatisfy {
                 $0 != nil
             }
@@ -112,13 +120,13 @@ public struct Board : CustomStringConvertible {
     }
 
     public func isColumnFull(at column: Int) -> Bool {
-        _grid.allSatisfy {
+        grid.allSatisfy {
             $0[column] != nil
         }
     }
 
     public func isRowFull(at row: Int) -> Bool {
-        _grid[row].allSatisfy {
+        grid[row].allSatisfy {
             $0 != nil
         }
     }

@@ -7,11 +7,15 @@ trigger:
     - push
 
 steps:
-  - name: build
+  - name: buildLib
     image: swift:latest
     commands:
       - cd Sources/Connect4Lib 
       - swift build
+
+  - name: buildApp
+    image: swift:latest
+    commands:
       - cd Sources/Connect4App
       - swift build
 
@@ -20,4 +24,4 @@ steps:
     commands:
       - cd Sources/Connect4Lib 
       - swift test
-    depends_on: [build]
+    depends_on: [buildLib,buildApp]
